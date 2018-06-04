@@ -1,0 +1,246 @@
+body {
+    font-family: 'Abel', sans-serif;
+    font-size: 18px;
+    background-color: navy;
+}
+
+h1, h2 {
+    font-family: 'Graduate', sans-serif;
+}
+
+h3 {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Header and Navigation Styles */
+
+.navbar{
+    padding: 0 5%;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+    display: inline;
+    margin-right:-20%;
+    margin-left: 15%;
+    transform: rotate(-40deg);
+    position: relative;
+    z-index: 100;
+}
+
+header h1{
+    display:inline;
+    margin-left: -30%;
+    position: relative;
+    z-index: 300;
+}
+
+header a {
+    color: black;
+    text-decoration:none;
+}
+
+
+header a:hover {
+    color: black;
+    text-decoration:none;
+}
+
+#wrapnav{
+
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding:0;
+}
+
+/* Structural and essential divs appearing on every page */
+
+.hotline{
+    width:60%;
+    margin: 2% auto;
+    padding-top:1%;
+    padding-bottom: 0.5%;
+    background-color: white;
+    color: navy;
+    text-decoration: underline;
+    text-decoration-color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.container {
+    background-color: white; 
+    width: 98% !important;
+    margin: 2% auto;
+    padding: 2%;
+    
+}
+
+/* Form Styles */
+
+input[type=text]{
+    width: 95%;
+    border: 1px solid black;
+}
+
+button:disabled h3{
+    color: gray;
+}
+
+/* index.html styles  */
+
+.mission {
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+}
+
+#results-preview{
+    min-height: 500px;
+    border-left: 1px solid black;
+}
+#results-button-div{
+    text-align: center;
+    margin: 3% auto;
+}
+
+/* #results-button-div button{
+    padding-top: 1%;
+    border-radius: 20px;
+} */
+
+
+/* Button style of card header */
+
+#headerbutton{
+    border: 1px solid #888 !important;
+    border-radius: 5px;
+    box-shadow: 3px 3px #999;
+}
+
+#headerbutton:hover {background-color: #666 !important;}
+
+
+
+#headerbutton:active {
+    transform: translateY(4px);
+}
+
+
+
+
+
+
+/* Button style inside of card body*/
+
+#yes, #no, #resetbutton, #assessmentstart, #submit-text, #imgSub, #submit-pasted-text{
+    
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+    margin-top: 10px;
+}
+
+#no{
+    background-color: rgb(80, 117, 148);
+}
+
+#resetbutton{
+    background-color: rgb(12, 184, 236);
+}
+
+#yes:hover {background-color: navy}
+#no:hover {background-color: navy}
+#resetbutton:hover {background-color: navy}
+#assessmentstart:hover {background-color: navy}
+#submit-text:hover {background-color: navy}
+#imgSub:hover {background-color: navy}
+#submit-pasted-text:hover {background-color: navy}
+
+
+#yes:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#no:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#resetbutton:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#assessmentstart:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#submit-text:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#imgSub:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+#submit-pasted-text:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+
+
+#fullresult {
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 3px #999;
+}
+
+#fullresult:hover {background-color: navy}
+
+#fullresult:active {
+    background-color: #1c0355;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+
+.center{
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
+
+
