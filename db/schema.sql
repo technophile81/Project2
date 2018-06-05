@@ -48,3 +48,8 @@ CREATE TABLE Subscription (
     createdAt DATETIME NOT NULL,
     PRIMARY KEY (userId,threadId)
 );
+CREATE TABLE Event (
+    eventId INTEGER NOT NULL AUTO_INCREMENT,
+    
+    PRIMARY KEY (eventId)
+);

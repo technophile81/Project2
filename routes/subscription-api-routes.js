@@ -1,26 +1,22 @@
-// Dependencies
-// =============================================================
+// /api/subscribed User.getSubscriptions
 
-// Requiring our models
+
 var db = require("../models");
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
+    // Returns threads that a user has been subscribed to
+    app.get("/api/subscribed", function (req, res) {
 
-app.get("/api/thread/:id", function (req, res) {
+        db.Subscription.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: [db.Thread],
+            order: ['createdAt', 'ASC']
+        })
 
-    db.Thread.findAll({
-        threadTitle: req.body.threadTitle,
-        
-        where: {
-            id: req.params.id
-        },
-        include: [db.Post],
-        order: [
-            ['createdAt', 'ASC']
-        ],
-    });
-})
+    })
 
 }

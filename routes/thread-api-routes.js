@@ -7,7 +7,7 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-
+// Returns posts in a given thread
 app.get("/api/thread/:id", function (req, res) {
 
     db.Thread.findAll({

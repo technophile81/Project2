@@ -1,11 +1,20 @@
 module.exports = function (sequelize, DataTypes) {
 
     var Subscription = sequelize.define('Subscription', {
-        started: DataTypes.BOOLEAN
+        viewedAt: DataTypes.DATETIME
     });
     Subscription.associate = function (models) {
-        models.User.belongsToMany(models.Thread, { through: 'Subscription', foreignKey: 'threadId', otherKey: 'userId' });
-        models.Thread.belongsToMany(models.User, { through: 'Subscription', foreignKey: 'userId', otherKey: 'threadId' });
+        models.User.belongsToMany(models.Thread, { 
+            as: 'Subscriptions', 
+            through: 'Subscription', 
+            foreignKey: 'userId', 
+            otherKey: 'threadId' });
+
+        models.Thread.belongsToMany(models.User, { 
+            as: 'Subscribers', 
+            through: 'Subscription', 
+            foreignKey: 'threadId', 
+            otherKey: 'userId' });
     };
     return Subscription;
 };

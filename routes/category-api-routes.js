@@ -7,7 +7,7 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function (app) {
-
+// Returns all categories
     app.get("/api/category", function (req, res) {
 
         db.Category.findAll({}).then(function (dbCategory) {
@@ -16,7 +16,7 @@ module.exports = function (app) {
             res.json(err);
         })
     });
-
+// Returns threads in a given category
     app.get("/api/category/:id", function (req, res) {
 
         db.Category.findOne({
@@ -29,9 +29,4 @@ module.exports = function (app) {
             ],
         });
     })
-
-
-
-
-
 }
