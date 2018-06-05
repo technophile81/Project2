@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
 
     var Subscription = sequelize.define('Subscription', {
-        viewedAt: DataTypes.DATETIME
+        //viewed: DataTypes.DATETIME
     });
     Subscription.associate = function (models) {
         models.User.belongsToMany(models.Thread, { 

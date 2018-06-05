@@ -32,4 +32,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/aboutUs.html"));
   });
 
+  app.get("/postform", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/postform.html"));
+  });
+
+  app.get("/postdisplay", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/postdisplay.html"));
+  });
+
+
+
 };
