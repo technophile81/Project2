@@ -20,6 +20,11 @@ app.get("/api/thread/:id", function (req, res) {
         order: [
             ['createdAt', 'ASC']
         ],
+    }).then(function (dbThread) {
+        res.json(dbThread)
+    }).catch(function (err) {
+        res.json(err);
     });
 })
 }
+

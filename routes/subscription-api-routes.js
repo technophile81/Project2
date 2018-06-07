@@ -1,6 +1,5 @@
 // /api/subscribed User.getSubscriptions
 
-
 var db = require("../models");
 
 // Routes
@@ -16,7 +15,5 @@ module.exports = function (app) {
             include: [db.Thread],
             order: ['createdAt', 'ASC']
         })
-
     })
-
 }
