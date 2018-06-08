@@ -3,26 +3,34 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model to use its database functions.
-var Thread = require("../models/thread.js");
+var db = require("../models");
 
-router.get("/api/thread/:id", function (req, res) {
+router.get("/viewthread/:id", function (req, res) {
 
-    db.Thread.findAll({
-        threadTitle: req.body.threadTitle,
-        
+    db.Thread.findOne({
         where: {
-            id: req.params.id
+            threadId: req.params.id
         },
-        include: [db.Post],
-        order: [
-            ['createdAt', 'ASC']
-        ],
-    }).then(function (dbThread) {
-        res.json(dbThread)
-    }).catch(function (err) {
-        res.json(err);
-    });
-});
-console.log(Thread);
+        include: [
+            { model: db.Category }
+        ]
+    }).then(function (thread) {
+        db.Post.findAll({
+            where: {
+                threadId: req.params.id
+            },
+            include: [
+                { model: db.User },
+            ],
+            order: [ 'createdAt' ]
+        }).then(function (data) {
+            var hbsObject = {
+                thread: thread,
+                posts: data
+            };
+            res.render("postlist", hbsObject);
+        });
+    })
+})
 
 module.exports = router;

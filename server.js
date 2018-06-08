@@ -77,12 +77,18 @@ db.sequelize.sync({ force: true }).then(function () {
         categoryId: testcat.categoryId,
       }]).then(function () {
         db.Thread.findOne({}).then(function (testthread) {
-          db.Post.create({
+          db.Post.bulkCreate([{
             postTitle: "This is a test title",
             postContent: "Lorem ipsum dolor sit amet lkja lkjf",
             userId: testuser.userId,
             threadId: testthread.threadId
-          })
+          },
+          {
+            postTitle: "This is a reply title",
+            postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
+            userId: testuser.userId,
+            threadId: testthread.threadId
+          }])
         })
       })
     })

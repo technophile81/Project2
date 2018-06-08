@@ -1,0 +1,23 @@
+<div class="d-flex flex-row">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Forum</a></li>
+    <li class="breadcrumb-item"><a href="/viewcategory/{{thread.Category.categoryId}}">{{thread.Category.categoryName}}</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page">{{thread.threadTitle}}</li>
+  </ol>
+</nav>
+<form method="GET" action="/postform">
+    <input type="hidden" name="thread_id" value="{{thread.threadId}}">
+    <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
+</form>
+</div>
+<div class="postbody">
+    {{#each posts}}
+    {{> post/post}}
+    {{/each}}
+
+
+</div>
+
+  <script src="../js/postlist.js" type="text/javascript"></script>

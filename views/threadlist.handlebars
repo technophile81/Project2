@@ -5,8 +5,10 @@
     <li class="breadcrumb-item active" aria-current="page">{{category.categoryName}}</li>
   </ol>
 </nav>
-<button class="btn btn-primary ml-auto">New Thread</button>
-</div>
+<form method="GET" action="/postform">
+    <input type="hidden" name="category_id" value="{{category.categoryId}}">
+    <input type="submit" class="newpost btn btn-primary" value="New Thread" />
+</form></div>
 <div class="category-name">{{category.categoryName}}</div>
 <div class="threadbody">
     {{#each threads}}

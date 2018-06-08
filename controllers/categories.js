@@ -5,34 +5,6 @@ var router = express.Router();
 // Import the model to use its database functions.
 var db = require("../models");
 
-// Returns all categories
-router.get("/api/category", function (req, res) {
-
-    db.Category.findAll({}).then(function (dbCategory) {
-        res.json(dbCategory)
-    }).catch(function (err) {
-        res.json(err);
-    })
-});
-
-// Returns threads in a given category
-router.get("/api/category/:id", function (req, res) {
-
-    db.Category.findOne({
-        where: {
-            id: req.params.id
-        },
-        include: [db.Thread],
-        order: [
-            ['createdAt', 'DESC']
-        ],
-    }).then(function (dbCategory) {
-        res.json(dbCategory)
-    }).catch(function (err) {
-        res.json(err);
-    });
-});
-
 router.get("/viewcategory/:id", function (req, res) {
 
     db.Category.findOne({
