@@ -88,7 +88,12 @@ db.sequelize.sync({ force: true }).then(function () {
             postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
             userId: testuser.userId,
             threadId: testthread.threadId
-          }])
+          }]);
+
+          db.Subscription.create({
+            userId: 1,
+            threadId: testthread.threadId
+          });
         })
       })
     })

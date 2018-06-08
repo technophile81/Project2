@@ -6,52 +6,52 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
-          },
+        },
         name: {
-           type: DataTypes.STRING,
-           allowNull: false,
-           validate: {
-               len: [1, 16]
-           }
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1, 16]
+            }
         },
         avatar: {
             type: DataTypes.STRING
-         },
+        },
         rank: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1, 16]
             }
-         },
-         branch: {
+        },
+        branch: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1, 16]
             }
-         },
-         deployment: {
+        },
+        deployment: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1, 26]
             }
-         },
-         mos: {
+        },
+        mos: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 len: [1, 26]
             }
-         },
-         bio: {
+        },
+        bio: {
             type: DataTypes.TEXT,
             allowNull: true,
             validate: {
                 len: [1, 32]
             }
-         }
+        }
     });
     User.associate = function (models) {
         User.hasMany(models.Thread, {
@@ -60,6 +60,9 @@ module.exports = function (sequelize, DataTypes) {
         User.hasMany(models.Post, {
             foreignKey: "userId",
             onDelete: "cascade"
+        });
+        User.hasMany(models.Subscription, {
+            foreignKey: "userId",
         });
     };
     return User;

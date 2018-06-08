@@ -1,20 +1,38 @@
-  <div class="d-flex justify-content-between" style="background-color: white;">
+<div class="d-flex justify-content-between" style="background-color: white;">
 
-        <div class="thread-details d-flex flex-row mr-auto p-2" data-threadId="{{this.threadId}}">
-            <div class="avatar"><a href="https://placeholder.com"><img src="http://via.placeholder.com/50x50"></a></div>
-            <div class="d-flex">
-                <div class="details-top">
-                    <div class="post-title"><a href="/viewthread/{{this.threadId}}">{{this.threadTitle}}</a></div>
-                    <div class="post-author">Posted by: {{this.User.name}}</div>
+    <div class="thread-details d-flex flex-row mr-auto p-2" data-threadId="{{this.threadId}}">
+        <div class="avatar">
+            <a href="https://placeholder.com">
+                <img src="http://via.placeholder.com/50x50">
+            </a>
+        </div>
+        <div class="d-flex">
+            <div class="details-top">
+                <div class="post-title">
+                    <a href="/viewthread/{{this.threadId}}">{{this.threadTitle}}</a>
                 </div>
-                <div class="details-btm">
-                    <div class="post-time">{{this.createdAt}}</div>
-                    <div class="post-cat">{{this.Category.categoryName}}</div>
-                </div>
+                <div class="post-author">Started by: {{this.User.name}}</div>
+            </div>
+            <div class="details-btm">
+                <div class="post-time">{{this.createdAt}}</div>
+                <div class="post-cat">{{this.Category.categoryName}}</div>
             </div>
         </div>
-        <div class="d-flex align-self-center p-2">
-            <div class="reply-num"><a href="https://placeholder.com"><img src="http://via.placeholder.com/18x18"></a></div>
-            <div class="subscribe"><a href="https://placeholder.com"><img src="http://via.placeholder.com/18x18"></a></div>
+    </div>
+    <div class="d-flex align-self-center p-2">
+        <div class="reply-num">
+            <a href="https://placeholder.com">
+                <img src="http://via.placeholder.com/18x18">
+            </a>
+        </div>
+        <div class="subscribe">
+            <button id="subscribed-button-{{this.threadId}}" class="subscribed" data-threadid="{{this.threadId}}">
+                {{#if this.Subscriptions}}
+                <i class="foo fas fa-star"></i>
+                {{else}}
+                <i class="foo far fa-star"></i>
+                {{/if}}
+            </button>
         </div>
     </div>
+</div>

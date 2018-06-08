@@ -32,6 +32,9 @@ module.exports = function(sequelize, DataTypes) {
       Thread.hasMany(models.Post, {
         foreignKey: "threadId"
       });
+      Thread.hasMany(models.Subscription, {
+        foreignKey: "threadId",
+      });
     };
 
     return Thread;
