@@ -11,11 +11,8 @@
       <li class="breadcrumb-item active" aria-current="page">{{thread.threadTitle}}</li>
     </ol>
   </nav>
-  <form method="GET" action="/postform">
-    <input type="hidden" name="thread_id" value="{{thread.threadId}}">
-    <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
-  </form>
-  <div class="subscribe">
+  <div class="ml-auto d-inline-flex">
+  <div class="subscribe mr-2">
     <button id="subscribed-button-{{thread.threadId}}" class="subscribed" data-threadid="{{thread.threadId}}">
       {{#if thread.Subscriptions}}
       <i class="foo fas fa-star"></i>
@@ -24,6 +21,11 @@
       {{/if}}
     </button>
   </div>
+  <form method="GET" action="/postform">
+    <input type="hidden" name="thread_id" value="{{thread.threadId}}">
+    <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
+  </form>
+</div>
 </div>
 <div class="postbody">
   {{#each posts}} {{> post/post}} {{/each}}
