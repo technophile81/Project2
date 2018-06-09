@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-between mb-2" style="background-color: pink;">
+
+    <div class="thread-details d-flex flex-row mr-auto p-2" data-threadId="{{this.threadId}}">
+        <div class="userinfo">
+            <div class="avatar">
+                <a href="https://placeholder.com">
+                    <img src="http://via.placeholder.com/50x50">
+                </a>
+            </div>
+            <div class="post-author mr-2">{{this.User.name}}</div>
+        </div>
+
+        <div class="d-flex flex-column">
+            <div class="details-top">
+                <div class="post-title">
+                    {{this.postTitle}}
+                </div>
+            </div>
+            <div class="details-middle">
+                <div class="post-content">
+                    {{{this.postContent}}}
+                </div>
+            </div>
+            <div class="details-btm">
+                <div class="post-time mr-2">
+                    {{this.createdAt}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-self-center p-2">
+        <form method="GET" action="/postform">
+            <input type="hidden" name="post_id" value="{{this.postId}}">
+            <input type="submit" class="newpost btn btn-primary" value="Edit" />
+        </form>
+
+    </div>
+</div>

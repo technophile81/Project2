@@ -18,6 +18,12 @@ sourceUID VARCHAR(255) NOT NULL,
 PRIMARY KEY (credentialId)
 );
 
+CREATE TABLE Category (
+categoryId INTEGER NOT NULL AUTO_INCREMENT,
+categoryName VARCHAR(255) NOT NULL,
+PRIMARY KEY (categoryId)
+);
+
 CREATE TABLE Thread (
     threadId INTEGER NOT NULL AUTO_INCREMENT,
     threadTitle VARCHAR(255) NOT NULL,

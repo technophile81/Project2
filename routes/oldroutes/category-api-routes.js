@@ -27,6 +27,10 @@ module.exports = function (app) {
             order: [
                 ['createdAt', 'DESC']
             ],
+        }).then(function (dbCategory) {
+            res.json(dbCategory)
+        }).catch(function (err) {
+            res.json(err);
         });
     })
 }
