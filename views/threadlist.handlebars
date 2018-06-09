@@ -1,0 +1,20 @@
+<div class="d-flex flex-row">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Forum</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{category.categoryName}}</li>
+  </ol>
+</nav>
+<form class="ml-auto" method="GET" action="/postform">
+    <input type="hidden" name="category_id" value="{{category.categoryId}}">
+    <input type="submit" class="newpost btn btn-primary" value="New Thread" />
+</form></div>
+<div class="category-name">{{category.categoryName}}</div>
+<div class="threadbody">
+    {{#each threads}}
+    {{> thread/thread}}
+    {{/each}}
+
+
+</div>
+  <script src="../js/threadlist.js" type="text/javascript"></script>

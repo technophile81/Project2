@@ -1,10 +1,12 @@
 module.exports = function (sequelize, DataTypes) {
     var Category = sequelize.define("Category", {
-        CategoryID: {
+        categoryId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
         },
-        CategoryName: {
+        categoryName: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
@@ -13,8 +15,9 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
     Category.associate = function (models) {
-
-        Category.hasMany(models.Thread);
+        Category.hasMany(models.Thread, {
+            foreignKey: "categoryId"
+        });
     };
     return Category;
 };

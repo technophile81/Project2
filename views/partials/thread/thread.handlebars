@@ -1,0 +1,39 @@
+<div class="d-flex justify-content-between mb-2" style="background-color: white;">
+
+    <div class="thread-list d-flex flex-row mr-auto" data-threadId="{{this.threadId}}">
+        <div class="avatar mr-2">
+            <a href="https://placeholder.com">
+                <img src="http://via.placeholder.com/50x50">
+            </a>
+        </div>
+        <div class="d-flex flex-column">
+            <div class="details-top">
+                <div class="post-title">
+                    <a href="/viewthread/{{this.threadId}}">{{this.threadTitle}}</a>
+                </div>
+                
+            </div>
+            <div class="details-btm d-inline-flex">
+                <div class="post-author mr-2">Started by: {{this.User.name}}</div>
+                <div class="post-time mr-2">{{this.createdAt}}</div>
+                <div class="post-cat mr-2">{{this.Category.categoryName}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-self-center">
+        <div class="reply-num mr-2">
+            <a href="https://placeholder.com">
+                <img src="http://via.placeholder.com/18x18">
+            </a>
+        </div>
+        <div class="subscribe">
+            <button id="subscribed-button-{{this.threadId}}" class="subscribed" data-threadid="{{this.threadId}}">
+                {{#if this.Subscriptions}}
+                <i class="foo fas fa-star"></i>
+                {{else}}
+                <i class="foo far fa-star"></i>
+                {{/if}}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,26 +1,39 @@
 module.exports = function(sequelize, DataTypes) {
     var Thread = sequelize.define("Thread", {
-      ThreadTitle: {
+      threadId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      threadTitle: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
           len: [1]
         }
       },
-      ThreadAuthorUserID: {
+      userId: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
-      CatID: {
+      categoryId: {
         type: DataTypes.INTEGER,
-        allowNull: false
-      }
+        allowNull: false,
+      },
     });
     Thread.associate = function(models) {
       Thread.belongsTo(models.Category, {
-        foreignKey: {
-          allowNull: false
-        }
+        foreignKey: "categoryId"
+      });
+      Thread.belongsTo(models.User, {
+        foreignKey: "userId"
+      });
+      Thread.hasMany(models.Post, {
+        foreignKey: "threadId"
+      });
+      Thread.hasMany(models.Subscription, {
+        foreignKey: "threadId",
       });
     };
 
