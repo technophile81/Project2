@@ -1,13 +1,9 @@
+<script src="http://cdn.wysibb.com/js/jquery.wysibb.min.js"></script>
+<link rel="stylesheet" href="http://cdn.wysibb.com/css/default/wbbtheme.css" />
+
 <div class="container">
 
-  <div class="row">
-
-    <div class="col-sm-2 mt-4">
-      <a class="btn btn-light" href="/viewthread/{{this.threadId}}">Go to Threads</a>
-    </div>
-  </div>
   <div class="col-md-12">
-
     <form action="/postform" method="POST">
       <div>
         <div class="row">
@@ -17,26 +13,35 @@
           <div class="col-lg-7">
             <input type="text" id="post-title" class="form-control" name="post_title" value="{{post_title}}">
           </div>
-          </div>
-          <div class="row">
+        </div>
+        <div class="row">
           <br/>
           <div class="col-lg-2">
             <label for="post-title">Comment:</label>
           </div>
           <div class="col-lg-7">
-
             <textarea rows="4" cols="50" id="post-content" class="form-control" name="post_content">{{post_content}}</textarea>
           </div>
-          </div>
-          <div class="row">
+        </div>
+        <div class="row">
           <br/>
           <div class="col-lg-3">
             <button class="btn btn-primary" type="submit">Add Post</button>
           </div>
-            <input type="hidden" name="post_id" value="{{post_id}}"/>
-            <input type="hidden" name="post_type" value="{{post_type}}"/>
-
+          <input type="hidden" name="post_id" value="{{post_id}}" />
+          <input type="hidden" name="post_type" value="{{post_type}}" />
         </div>
       </div>
     </form>
+  </div>
+</div>
 
+<script>
+  $(document).ready(function () {
+    var wbbOpt = {
+      buttons: "bold,italic,underline,|,img,link,|,code,quote,|,bullist,numlist",
+      lang: "en",
+    };
+    $("#post-content").wysibb(wbbOpt);
+  });
+</script>

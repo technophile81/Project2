@@ -61,6 +61,7 @@ router.post("/postform", function (req, res) {
     // the `/postform` GET above and if they are
     // changed there they will also need to be
     // changed here
+
     if (req.body.post_type === "new thread") {
         // create new thread
 

@@ -1,4 +1,5 @@
 var express = require("express");
+var bbCode = require("ya-bbcode");
 
 var router = express.Router();
 
@@ -29,6 +30,15 @@ router.get("/viewthread/:id", function (req, res) {
             ],
             order: [ 'createdAt' ]
         }).then(function (data) {
+            let parser = new bbCode();
+
+            for (let post of data) {
+                post.postContent = post.postContent.replace(/&/g, "&amp;");
+                post.postContent = post.postContent.replace(/</g, "&lt;");
+                post.postContent = post.postContent.replace(/>/g, "&gt;");
+                post.postContent = parser.parse(post.postContent);
+            }
+
             var hbsObject = {
                 thread: thread,
                 posts: data
