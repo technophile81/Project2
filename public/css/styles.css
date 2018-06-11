@@ -57,7 +57,7 @@ nav .breadcrumb a {
 ******************************************************************/
 
 #sidebar {
-    background: url("../images/bkgd.jpg") no-repeat;
+    /*background: url("../images/bkgd.jpg") no-repeat;*/
     background-size: auto;
 }
 

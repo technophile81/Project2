@@ -21,7 +21,10 @@ module.exports = function (app) {
   app.get("/signup", function (req, res) {
     res.render("signup");
   });
-  
+
+  app.get("/profile", function (req, res) {
+    res.render("profile");
+  })
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads index.html
