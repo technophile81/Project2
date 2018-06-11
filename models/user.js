@@ -11,10 +11,13 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 16]
+                len: [1, 32]
             }
         },
         avatar: {
+            type: DataTypes.STRING
+        },
+        coverImg: {
             type: DataTypes.STRING
         },
         rank: {

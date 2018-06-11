@@ -23,7 +23,7 @@ module.exports = function (app) {
   });
 
   app.get("/profile", function (req, res) {
-    res.render("profile");
+    res.renderWithContext("profile", {});
   })
   // Each of the below routes just handles the HTML page that the user gets sent to.
 

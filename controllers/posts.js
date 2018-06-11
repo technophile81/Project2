@@ -13,13 +13,13 @@ router.get("/postform", isAuthenticated, function (req, res) {
         hbsObject.post_type = "new thread";
         hbsObject.post_id = req.query.category_id;
 
-        res.render("postform", hbsObject);
+        res.renderWithContext("postform", hbsObject);
     } else if (req.query.thread_id) {
         // reply to thread
         hbsObject.post_type = "reply to thread";
         hbsObject.post_id = req.query.thread_id;
 
-        res.render("postform", hbsObject);
+        res.renderWithContext("postform", hbsObject);
     } else if (req.query.post_id) {
         // edit post
         hbsObject.post_type = "edit post";
@@ -33,7 +33,7 @@ router.get("/postform", isAuthenticated, function (req, res) {
             hbsObject.post_title = postdata.postTitle;
             hbsObject.post_content = postdata.postContent;
 
-            res.render("postform", hbsObject);
+            res.renderWithContext("postform", hbsObject);
         });
 
         // TODO get the existing post title and content

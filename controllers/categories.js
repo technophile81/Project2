@@ -1,5 +1,6 @@
 var express = require("express");
 var sequelize = require("sequelize");
+var moment = require("moment");
 
 var router = express.Router();
 
@@ -38,13 +39,17 @@ router.get("/viewcategory/:id", isAuthenticated, function (req, res) {
                 [ 'createdAt', 'DESC' ],
             ],
         }).then(function (data) {
+            for (let thread of data) {
+                thread.threadTime = moment(thread.createdAt).format('MMMM Do YYYY, HH:mm');
+            };
             var hbsObject = {
                 threads: data,
                 category: category
             };
-            res.render("threadlist", hbsObject);
+            res.renderWithContext("threadlist", hbsObject);
         });
     })
-})
+});
+
 
 module.exports = router;
