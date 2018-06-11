@@ -121,3 +121,14 @@ nav .breadcrumb a {
 div.thread-details:nth-child(1) .post-title h2 {
     font-size: 1.8em;
 }
+
+
+
+
+
+
+.navbar input[type="text"], textarea {
+    outline: none;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+    }
