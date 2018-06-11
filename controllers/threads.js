@@ -1,5 +1,7 @@
 var express = require("express");
 var bbCode = require("ya-bbcode");
+var moment = require("moment");
+
 
 var router = express.Router();
 
@@ -37,14 +39,17 @@ router.get("/viewthread/:id", isAuthenticated, function (req, res) {
                 post.postContent = post.postContent.replace(/&/g, "&amp;");
                 post.postContent = post.postContent.replace(/</g, "&lt;");
                 post.postContent = post.postContent.replace(/>/g, "&gt;");
-                post.postContent = parser.parse(post.postContent);
+                // Add an empty tag to force bbcode rendering even if
+                // there is no bbcode in the actual post.
+                post.postContent = parser.parse(post.postContent + '[b][/b]');
+                post.postTime = moment(post.createdAt).format('MMMM Do YYYY, HH:mm');
             }
 
             var hbsObject = {
                 thread: thread,
                 posts: data
             };
-            res.render("postlist", hbsObject);
+            res.renderWithContext("postlist", hbsObject);
         });
     })
 })

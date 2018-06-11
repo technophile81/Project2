@@ -22,12 +22,16 @@
 <body>
     <div class="container-fluid h-100">
         <div class="d-flex flex-row align-self-stretch  h-100">
+            {{#if user}}
             <div id="sidebar" class="col-lg-3">
                 {{> sidebar/sidebar}}
             </div>
             <div class="col-lg-9">
+            {{else}}
+            <div class="col-lg-12">
+            {{/if}}
                 {{{ body }}}
-            </div>
+            </div>            
         </div>
     </div>
 
