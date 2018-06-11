@@ -26,11 +26,15 @@
             <div class="d-flex">
                 <form class="details-btm flex-inline d-flex" method="GET" action="/postform">
                 <div class="reply mr-2">
-                    <input type="hidden" name="thread_id" value="{{thread.threadId}}">
+                    <i class="fas fa-reply"></i>
+                    <input type="hidden" name="thread_id" value="{{this.threadId}}">
                     <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
                 </div>
+                </form>
+                <form class="details-btm flex-inline d-flex" method="GET" action="/postform">
                 {{#if this.myPost}}
                 <div class="edit">
+                    <i class="fas fa-edit"></i>
                     <input type="hidden" name="post_id" value="{{this.postId}}">
                     <input type="submit" class="newpost btn btn-primary" value="Edit" />
                 </div>
