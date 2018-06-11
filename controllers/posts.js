@@ -4,8 +4,9 @@ var router = express.Router();
 
 // Import the model to use its database functions.
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/postform", function (req, res) {
+router.get("/postform", isAuthenticated, function (req, res) {
     var hbsObject = {};
     if (req.query.category_id) {
         // new thread
@@ -52,7 +53,7 @@ router.get("/postform", function (req, res) {
     }
 });
 
-router.post("/postform", function (req, res) {
+router.post("/postform", isAuthenticated, function (req, res) {
     // COMMON FIELDS
     //   req.body.post_title - the post title
     //   req.body.post_content - the post content
@@ -67,7 +68,7 @@ router.post("/postform", function (req, res) {
 
         db.Thread.create({
             threadTitle: req.body.post_title,
-            userId: 1, // session management will provide credentials
+            userId: req.user.userId,
             categoryId: req.body.post_id
         }).then(function (newthread) {
             db.Post.create({
@@ -93,7 +94,7 @@ router.post("/postform", function (req, res) {
             threadId: req.body.post_id,
             postTitle: req.body.post_title,
             postContent: req.body.post_content,
-            userId: 1
+            userId: req.user.userId,
         }).then(function (newpost) {
             res.redirect("/viewthread/" + newpost.threadId);
         });
@@ -115,14 +116,13 @@ router.post("/postform", function (req, res) {
             }).then(function () {
                 db.Post.findOne({
                     where: {
-                        postId: req.body.post_id
+                        postId: req.body.post_id,
+                        userId: req.user.userId,
                     }
                 }).then(function (updatedpost) {
                     res.redirect("/viewthread/" + updatedpost.threadId);
                 });
             });
-        // EVENTUALLY
-        //   make sure the user can only edit their own posts
     } else {
         // ERROR
         console.log("unknown post type: '" + req.body.post_type + "'");

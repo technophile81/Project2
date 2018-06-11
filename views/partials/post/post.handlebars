@@ -1,38 +1,55 @@
-<div class="d-flex justify-content-between mb-2" style="background-color: pink;">
 
-    <div class="thread-details d-flex flex-row mr-auto p-2" data-threadId="{{this.threadId}}">
-        <div class="userinfo">
+    <div class="thread-details d-flex flex-row" data-threadId="{{this.threadId}}">
+        <div class="userinfo mr-4">
             <div class="avatar">
                 <a href="https://placeholder.com">
-                    <img src="http://via.placeholder.com/50x50">
+                    <img src="http://via.placeholder.com/100x100">
                 </a>
             </div>
-            <div class="post-author mr-2">{{this.User.name}}</div>
         </div>
-
         <div class="d-flex flex-column">
             <div class="details-top">
                 <div class="post-title">
-                    {{this.postTitle}}
+                    <h2>{{this.postTitle}}</h2>
                 </div>
             </div>
-            <div class="details-middle">
+            <div class="details-middle d-flex flex-inline mb-3">
+                <div class="post-author mr-2">Posted by: <span>{{this.User.name}}</span></div>
+                <div class="post-rank mr-2">RANK</div>
+                <div class="post-time mr-2">{{this.createdAt}}</div>
+            </div>
+            <div class="details-content">
                 <div class="post-content">
                     {{{this.postContent}}}
                 </div>
             </div>
-            <div class="details-btm">
-                <div class="post-time mr-2">
-                    {{this.createdAt}}
+            <div class="d-flex">
+                <form class="details-btm flex-inline d-flex" method="GET" action="/postform">
+                <div class="reply mr-2">
+                    <input type="hidden" name="thread_id" value="{{thread.threadId}}">
+                    <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
                 </div>
+                {{#if this.myPost}}
+                <div class="edit">
+                    <input type="hidden" name="post_id" value="{{this.postId}}">
+                    <input type="submit" class="newpost btn btn-primary" value="Edit" />
+                </div>
+                {{/if}}
+                </form>
             </div>
         </div>
     </div>
+    {{!--
     <div class="d-flex align-self-center p-2">
         <form method="GET" action="/postform">
-            <input type="hidden" name="post_id" value="{{this.postId}}">
-            <input type="submit" class="newpost btn btn-primary" value="Edit" />
+            <div class="edit">
+                <input type="hidden" name="post_id" value="{{this.postId}}">
+                <input type="submit" class="newpost btn btn-primary" value="Edit" />
+            </div>
+            <div class="reply">
+                <input type="hidden" name="thread_id" value="{{thread.threadId}}">
+                <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
+            </div>
         </form>
 
-    </div>
-</div>
+    </div> --}}

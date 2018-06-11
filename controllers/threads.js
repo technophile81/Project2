@@ -5,9 +5,9 @@ var router = express.Router();
 
 // Import the model to use its database functions.
 var db = require("../models");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get("/viewthread/:id", function (req, res) {
-
+router.get("/viewthread/:id", isAuthenticated, function (req, res) {
     db.Thread.findOne({
         where: {
             threadId: req.params.id
@@ -16,7 +16,7 @@ router.get("/viewthread/:id", function (req, res) {
             { model: db.Category },
             {
                 model: db.Subscription,
-                where: { userId: 1 }, // change later
+                where: { userId: req.user.userId },
                 required: false // this is an outer join; will null if this doesn't exist but will still return the row; 
             },
         ]
@@ -33,6 +33,7 @@ router.get("/viewthread/:id", function (req, res) {
             let parser = new bbCode();
 
             for (let post of data) {
+                post.myPost = (post.userId == req.user.userId);
                 post.postContent = post.postContent.replace(/&/g, "&amp;");
                 post.postContent = post.postContent.replace(/</g, "&lt;");
                 post.postContent = post.postContent.replace(/>/g, "&gt;");

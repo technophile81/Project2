@@ -1,0 +1,123 @@
+/* Global Styles
+******************************************************************/
+
+/* Colors:
+
+- Red: 500D0D rgba(80,13,13,1)
+- Blue: 364650 rgba(54,70,80,1)
+- Beige: C49B74 rgba(196,155,116,1)
+
+*/
+html,body {
+    height: 100%;
+  }
+  
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8em;
+    color: rgba(54, 70, 80, 1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+blockquote {
+    border-left: 5px solid #eee;
+}
+
+a { color: rgba(54,70,80,1); }
+
+.container-fluid { padding: 0; height: 100%; }
+
+/* Profile Styles
+******************************************************************/
+
+nav .breadcrumb {
+    background-color: transparent;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding: .75rem 0; 
+}
+
+nav .breadcrumb a {
+    font-weight: 500;
+}
+
+/* Sidebar
+******************************************************************/
+
+#sidebar {
+    /*background: url("../images/bkgd.jpg") no-repeat;*/
+    background-size: auto;
+}
+
+
+/* Thread List Styles
+******************************************************************/
+
+.category-name {
+    display: block;
+    border-radius: 6px;
+    background-color: rgba(196, 155, 116, 0.25);
+    padding: .25em .75em;
+    font-weight: 700; 
+    margin-bottom: 30px; 
+}
+
+
+
+/* Post Styles
+******************************************************************/
+
+.thread-details {
+    border-bottom: 1px solid rgba(54, 70, 80, 0.25);
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.thread-details .details-top {
+    padding-top: 5px;
+}
+
+.avatar img {
+    border-radius: 50%;
+    border: 3px solid #E8E5DB;
+}
+
+.post-title h2 {
+    font-size: 1rem;
+    margin-bottom:  0;
+    padding-bottom: .3em;
+    padding-top: .3rem;
+}
+
+.post-author {
+    color: rgba(80, 13, 13, 1);
+}
+
+.post-author span {
+    font-weight: 700;
+}
+
+.details-middle {
+    font-size: 0.75rem;
+}
+
+.post-content {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+div.thread-details:nth-child(1) .post-title h2 {
+    font-size: 1.8em;
+}

@@ -11,13 +11,20 @@ var path = require("path");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-    res.redirect("/index");
+    res.redirect("/login");
   });
 
-  app.get("/index", function (req, res) {
-    res.render("index");
-  })
+  app.get("/login", function (req, res) {
+    res.render("login");
+  });
 
+  app.get("/signup", function (req, res) {
+    res.render("signup");
+  });
+
+  app.get("/profile", function (req, res) {
+    res.render("profile");
+  })
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads index.html
@@ -39,5 +46,20 @@ module.exports = function (app) {
   app.get("/aboutUs", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/ptsdapp/aboutUs.html"));
   });
+
+  // var isAuthenticated = require("../config/middleware/isAuthenticated");
+
+  
+  // app.get("/profile", isAuthenticated, function (req, res) {
+  //   if (isAuthenticated) {
+  //     res.sendFile(path.join(__dirname, "../public/profile.html"))
+  //   }
+  //   else {
+  //     res.redirect("/signup");
+  //   }
+  // });
+
+
+
 
 };

@@ -22,6 +22,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
     });
+
     Thread.associate = function(models) {
       Thread.belongsTo(models.Category, {
         foreignKey: "categoryId"
@@ -36,7 +37,13 @@ module.exports = function(sequelize, DataTypes) {
         foreignKey: "threadId",
       });
     };
+    /* Thread.addScope("all", {
+      include: {postId: Post.postId}
+    }) */
+  
 
-    return Thread;
+    return Thread
+/*     .scope("all")
+    .findAndCountAll({ where: {}, offset: 0, distinct:true }); */
   };
   
