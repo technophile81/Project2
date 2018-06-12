@@ -130,8 +130,22 @@ db.sequelize.sync({ force: true }).then(function () {
             }]);
 
             db.Subscription.create({
-              userId: 1,
+              userId: testuser.userId,
               threadId: testthread.threadId
+            });
+
+            db.User.create({
+              name: "Jack Black",
+              rank: 'E-1',
+              branch: 'army',
+              deployment: 'Jumanji',
+              mos: 'Feminine',
+              bio: 'OMG.'
+            }).then(function (testfollowed) {
+              db.Follower.create({
+                followerId: testuser.userId,
+                followedId: testfollowed.userId
+              });
             });
           })
         })

@@ -1,12 +1,13 @@
-THIS IS A USER NAMED BOB
-FOLLOW BOB
+THIS IS A USER NAMED {{profile.name}}
 
         <div class="following">
-            <button id="followed-button-{{this.userId}}" class="followed" data-userid="{{this.userId}}">
-                {{#if this.Followers}}
+            <button id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
+                {{#if profile.Followers}}
                 <i class="foo fas fa-star"></i>
                 {{else}}
                 <i class="foo far fa-star"></i>
                 {{/if}}
             </button>
         </div>
+
+        <script src="../js/profilepage.js" type="text/javascript"></script>

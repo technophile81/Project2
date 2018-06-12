@@ -67,15 +67,11 @@ module.exports = function (sequelize, DataTypes) {
         User.hasMany(models.Subscription, {
             foreignKey: "userId",
         });
-        User.belongsToMany(User, { 
-            as: 'Followers', 
-            foreignKey: 'followedId', 
-            through: models.Follower
+        User.hasMany(models.Follower, {
+            foreignKey: "followerId",
         });
-        User.belongsToMany(User, { 
-            as: 'Followeds', 
-            foreignKey: 'followerId', 
-            through: models.Follower 
+        User.hasMany(models.Follower, {
+            foreignKey: "followedId",
         });
     };
 
