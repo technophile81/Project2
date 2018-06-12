@@ -22,11 +22,13 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
                 },
                 required: false
             },
+            { model: db.Post }
 
         ]
     }).then(function (userdata) {
         var hbsObject = {
-            profile: userdata
+            profile: userdata,
+            posts: userdata
         };
         res.renderWithContext("viewuser", hbsObject);
     })
