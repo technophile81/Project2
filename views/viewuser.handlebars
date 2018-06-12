@@ -1,0 +1,12 @@
+THIS IS A USER NAMED BOB
+FOLLOW BOB
+
+        <div class="following">
+            <button id="followed-button-{{this.userId}}" class="followed" data-userid="{{this.userId}}">
+                {{#if this.Followers}}
+                <i class="foo fas fa-star"></i>
+                {{else}}
+                <i class="foo far fa-star"></i>
+                {{/if}}
+            </button>
+        </div>
