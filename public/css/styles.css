@@ -132,3 +132,17 @@ div.thread-details:nth-child(1) .post-title h2 {
     box-shadow:none !important;
     border:1px solid #ccc !important;
     }
+
+
+/* Profile Page Styles
+******************************************************************/
+
+.fas.fa-user:after {
+    content: "Following";
+    padding-left: 10px;
+ }
+
+ .far.fa-user:after {
+    content: "Follow";
+    padding-left: 10px;
+ }
