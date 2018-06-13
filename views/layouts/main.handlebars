@@ -12,6 +12,7 @@
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css" media="screen" title="no title">
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="http://cdn.wysibb.com/js/jquery.wysibb.min.js"></script>
@@ -21,18 +22,23 @@
 
 <body>
     <div class="container-fluid h-100">
-        <div class="d-flex flex-row align-self-stretch  h-100">
+        <div class="d-flex flex-row align-self-stretch  h-100 row row-offcanvas row-offcanvas-left">
             {{#if user}}
-            <div id="sidebar" class="col-lg-3">
+            <div id="sidebar" class="col-lg-3 column col-sm-3 col-xs-1 sidebar-offcanvas">
                 {{> sidebar/sidebar}}
             </div>
-            <div class="col-lg-9">
-                {{> nav/navbar}}
+            <div class="col-lg-9 column col-xs-11" id="main">
+
+                <div class="flex-row topnav">{{> nav/navbar}}</div>
+                <div class="flex-row">{{{ body }}}</div>
+                
             {{else}}
-            <div class="col-lg-12">
-                {{> nav/navbar-home}}
+                <div class="col-lg-12 " id="main">
+
+                <div class="flex-row">{{> nav/navbar-home}}</div>
+                <div class="flex-row">{{{ body }}}</div>
             {{/if}}
-                {{{ body }}}
+                
             </div>            
         </div>
     </div>

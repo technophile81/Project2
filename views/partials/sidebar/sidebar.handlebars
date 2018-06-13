@@ -1,12 +1,66 @@
-<div class="d-flex align-self-stretch h-100">
+<nav class="d-flex align-self-stretch h-100 bkgd flex-column">
+
     
-    {{#if categories}}
-    <ul class="cat_list">
-        {{#each categories}}
-        <li><a href="/viewcategory/{{this.categoryId}}">{{this.categoryName}}</a></li>
-        {{/each}}
+    <a class="navbar-brand" href="#">
+        <img src="/images/logo.png" id="logo" width="30" height="30" alt="">
+        <span class="collapse in hidden-xs">PTSDNet</span>
+    </a>
+    
+
+    
+        <h2>
+        <i class='far fa-list-alt'></i>
+        <span class="collapse in hidden-xs">Category</span>
+    </h2>
+    
+    
+    
+
+
+    <ul class="nav flex-column flex-nowrap">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">FORUM
+                <i class='fas fa-chevron-right'></i>
+            </a>
+            <div class="collapse" id="submenu1" aria-expanded="false">
+                {{#if categories}}
+                <ul>
+
+                    {{#each categories}}
+                    <li>
+
+                        <a class="d-flex justify-content-around" href="/viewcategory/{{this.categoryId}}">{{this.categoryName}}
+                            <i class="fas fa-greater-than"></i>
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">EVENTS
+                <i class='fas fa-chevron-right'></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">ACCESSMENT
+                <i class='fas fa-chevron-right'></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">PROFILE
+                <i class='fas fa-chevron-right'></i>
+            </a>
+        </li>
     </ul>
+<<<<<<< HEAD
     {{/if}}
 
     
 </div>
+=======
+
+</nav>
+>>>>>>> 0fa34e0db2af369453b484661e59a01919228dc2
