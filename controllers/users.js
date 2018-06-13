@@ -9,7 +9,6 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 
     db.User.findOne({
-
         where: {
             userId: req.params.user_id
         },
@@ -21,16 +20,31 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
                     followedId: req.params.user_id
                 },
                 required: false
-            },
-            { model: db.Post }
-
+            }
         ]
     }).then(function (userdata) {
-        var hbsObject = {
-            profile: userdata,
-            posts: userdata
-        };
-        res.renderWithContext("viewuser", hbsObject);
+        db.Post.findAll({
+            where: {
+                userId: req.params.user_id
+            },
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            limit: 5,
+        }).then(function (postdata) {
+            userdata.getFolloweds().then(function (followeddata) {
+                userdata.getSubscriptions().then(function (subbeddata) {
+                    var hbsObject = {
+                        myProfile: (req.params.user_id == req.user.userId),
+                        profile: userdata,
+                        posts: postdata,
+                        followeds: followeddata,
+                        subscriptions: subbeddata,
+                    };
+                    res.renderWithContext("viewuser", hbsObject);
+                });
+            });
+        });
     })
 });
 

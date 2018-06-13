@@ -10,7 +10,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 router.put("/api/follow/:user_id", isAuthenticated, function (req, res) {
     // prevents user from following self
-    if (req.body.following && req.params.user_id !== req.user.userId) {
+    if (req.body.following && req.params.user_id != req.user.userId) {
         db.Follower.upsert({
             followerId: req.user.userId,
             followedId: req.params.user_id

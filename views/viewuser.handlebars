@@ -19,23 +19,33 @@ THIS IS A USER NAMED {{profile.name}}
     <li class="nav-item">
         <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Post History</a>
     </li>
+    {{#if myProfile}}
     <li class="nav-item">
         <a class="nav-link" id="subscribed-tab" data-toggle="tab" href="#subscribed" role="tab" aria-controls="subscribed" aria-selected="false">Subscribed</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" id="follow-tab" data-toggle="tab" href="#follow" role="tab" aria-controls="follow" aria-selected="false">Following</a>
     </li>
+    {{/if}}
 </ul>
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
-         {{#each posts}} {{> post/post}} {{/each}}
+        {{#each posts}} {{> post/post}} {{/each}}
     </div>
+
+    {{#if myProfile}}
     <div class="tab-pane fade" id="subscribed" role="tabpanel" aria-labelledby="subscribed-tab">
-        {{#each threads}} {{> thread/thread}} {{/each}}
+ 
+            {{#each subscriptions}} {{> thread/thread}} {{/each}}
+
     </div>
+
     <div class="tab-pane fade" id="follow" role="tabpanel" aria-labelledby="follow-tab">
-        {{#each followers}} {{> followers/followlist}} {{/each}}
+        <ul>
+        {{#each followeds}} <li> {{this.name}} </li> {{/each}}
+        </ul>
     </div>
+    {{/if}}
 </div>
 
 
