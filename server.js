@@ -36,13 +36,46 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Handlebars config -- here's where we also define default layout, instead of where it was before
+var hbs = exphbs.create({
+  helpers: {
+      isUser: function (variable1, variable2) {
+          if (variable1 == variable2) {
+              console.log("user owns event");
+              return true;
+          } else {
+              console.log("user does not own event");
+              return false;
+          }
+      }, 
+      isAttending: function (user, eventsObj) {
+        let attending=false;
+        ///add if to define the variable that's going to get the length!
+        for(let i=0; i<eventsObj.User_Id[0].length; i++){
+            
+            if (eventsObj.User_Id[0][i].userId == user){
+                attending = true;
+                return attending;
+            }else{
+                attending = false;
+            }
+        }
+        return attending;  
+      },
+      commentsThere: function(array){
+        if(array.length === 0){
+          return false;
+        }else{
+          return true;
+        }
+      } 
+  },
+  defaultLayout: 'main'
+});
+
 // Handlebars config 
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main",
-  })
-);
+app.engine("handlebars", hbs.engine);
+
 app.set("view engine", "handlebars");
 
 // Called _before_ every route is actually processed
