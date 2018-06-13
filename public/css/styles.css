@@ -125,6 +125,10 @@ div.thread-details:nth-child(1) .post-title h2 {
   font-size: 1.8em;
 }
 
+
+/* Navbar Styles
+******************************************************************/
+
 .navbar input[type="text"],
 textarea {
   outline: none;
@@ -132,6 +136,7 @@ textarea {
   border: 1px solid #ccc !important;
 }
 
+#navbartop2 img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid black; }
 
 #logo{
     width: 60px;
