@@ -12,7 +12,7 @@
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css" media="screen" title="no title">
-    
+
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="http://cdn.wysibb.com/js/jquery.wysibb.min.js"></script>
@@ -31,18 +31,15 @@
 
                 <div class="flex-row topnav">{{> nav/navbar}}</div>
                 <div class="flex-row">{{{ body }}}</div>
-                
+            </div>
             {{else}}
-                <div class="col-lg-12 " id="main">
-
+            <div class="col-lg-12 " id="main">
                 <div class="flex-row">{{> nav/navbar-home}}</div>
                 <div class="flex-row">{{{ body }}}</div>
+            </div>
             {{/if}}
-                
-            </div>            
         </div>
     </div>
-
 </body>
 
 </html>
