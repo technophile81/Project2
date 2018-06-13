@@ -23,7 +23,7 @@
     </div>
     <div class="ml-auto align-self-center">
         {{#if user}} User:
-
+<img src="{{user.avatar}}" alt="{{user.name}}"/>
         <a href="/viewuser/{{user.userId}}">{{user.name}}</a>
         {{/if}}
         <a href="/logout">
