@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-between mb-2" style="background-color: white;">
+<div class="d-flex justify-content-between thread-list">
 
-    <div class="thread-list d-flex flex-row mr-auto align-self-center" data-threadId="{{this.threadId}}">
+    <div class=" d-flex flex-row mr-auto align-self-center" data-threadId="{{this.threadId}}">
         <div class="avatar mr-2">
             <a href="https://placeholder.com">
                 <img src="http://via.placeholder.com/50x50">
@@ -23,14 +23,15 @@
         </div>
     </div>
     <div class="d-flex align-self-center">
+        <i class="far fa-comment-alt align-self-center mr-2"></i>
         <div class="reply-num mr-2">{{this.dataValues.postCount}}
         </div>
         <div class="subscribe">
             <button id="subscribed-button-{{this.threadId}}" class="subscribed" data-threadid="{{this.threadId}}">
                 {{#if this.Subscriptions}}
-                <i class="foo fas fa-star"></i>
+                <i class="foo fas fa-star align-self-center"></i>
                 {{else}}
-                <i class="foo far fa-star"></i>
+                <i class="foo far fa-star align-self-center"></i>
                 {{/if}}
             </button>
         </div>

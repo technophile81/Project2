@@ -47,6 +47,16 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/ptsdapp/aboutUs.html"));
   });
 
+  // app.get("/assessment", function (req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/ptsdapp/index.html"));
+  // });
+
+  // app.get("/assesmentStuff", function(req.res) {
+    // send back assesment.handlebars file to client
+  // });
+
+
+
   // var isAuthenticated = require("../config/middleware/isAuthenticated");
 
   

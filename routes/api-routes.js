@@ -6,6 +6,8 @@ var postsController = require("../controllers/posts");
 var subscriptionsController = require("../controllers/subscriptions");
 var followersController = require("../controllers/followers");
 var usersController = require("../controllers/users");
+var searchController = require("../controllers/search");
+var assessmentController = require("../controllers/assessment")
 
 module.exports = function(app) {
   app.use(categoriesController);
@@ -14,4 +16,6 @@ module.exports = function(app) {
   app.use(subscriptionsController);
   app.use(followersController);
   app.use(usersController);
+  app.use(searchController);
+  app.use(assessmentController);
 };

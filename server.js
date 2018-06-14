@@ -11,7 +11,7 @@ var session = require("express-session");
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-
+var addPostToIndex = require("./config/search");
 
 // Sets up the Express App
 // =============================================================
@@ -108,6 +108,8 @@ db.sequelize.sync({ force: true }).then(function () {
   // REMOVE LATER
   db.User.create({
     name: "Dwayne 'the Rock' Johnson",
+    avatar: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
+    coverImg: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
     rank: 'E-6',
     branch: 'army',
     deployment: 'Egypt',
@@ -160,7 +162,10 @@ db.sequelize.sync({ force: true }).then(function () {
               postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
               userId: testuser.userId,
               threadId: testthread.threadId
-            }]);
+            }]).then(function () {
+              addPostToIndex(1);
+              addPostToIndex(2);
+            });
 
             db.Subscription.create({
               userId: testuser.userId,
