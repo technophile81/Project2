@@ -1,4 +1,4 @@
-<form action="/viewuser" method="POST">
+<form method="POST">
         <div class="form-group">
             <label for="exampleFormControlInput1">Username</label>
             <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Username" value="{{user.name}}">
@@ -46,7 +46,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Deployments</label>
-            <input type="text" class="form-control" name="deployments" id="deployments" placeholder="Deployments" value="{{user.deployments}}">
+            <input type="text" class="form-control" name="deployments" id="deployments" placeholder="Deployments" value="{{user.deployment}}">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Bio</label>
@@ -88,9 +88,11 @@ $( document ).ready( function () {
     } );
 } );
 
-/*//Copy this css*/
+
+</script>
+<style>
 .navbar-light .navbar-nav .nav-link {
-    color: rgb(64, 64, 64);
+    color: rgba(64, 64, 64,1);
 }
 .btco-menu li > a {
     padding: 10px 15px;
@@ -113,5 +115,4 @@ $( document ).ready( function () {
 
 Add CommentCollapse 
 
-
-</script>
+</style>
