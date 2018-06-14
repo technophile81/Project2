@@ -50,7 +50,7 @@ a:hover {
 
 .btn:hover, .btn:active, .btn:focus { text-decoration: none!important;}
 
-.btn {
+#assessment-content .btn {
   width: 100%;
 }
 
