@@ -1,9 +1,10 @@
-<nav class="d-flex justify-content-center my-auto" id="navbartop2">
-    <div class="toggler align-self-center">
+<nav class="d-flex justify-content-center" id="navbartop2">
+    <div class="toggler d-flex align-self-center">
 
-        <a href="#" data-toggle="offcanvas">
-            <i class="fas fa-bars"></i>
-        </a>
+        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn d-flex align-item-stretch">
+                                 <i class="fas fa-bars d-flex align-self-center"></i>
+                                
+                            </button>
 
         {{!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -12,26 +13,27 @@
         </button> --}}
     </div>
 
-    <div class="input-group col-md-8 search align-self-center">
+    <div class="input-group search align-self-center">
         <form id="search-form" action="/viewsearch" method="GET">
-        <span class="input-group-append">
-            <button class="btn border-0 " type="button">
-                <i class="fa fa-search" id="postsearch"></i>
-            </button>
-        </span>
+            {{!--
+            <span class="input-group-append">
+                <button class="btn border-0 " type="button">
+                    <i class="fa fa-search" id="postsearch"></i>
+                </button>
+            </span> --}}
             <input class="form-control border-0" type="search" placeholder="search" name="q" id="search-input">
         </form>
     </div>
 
     <div id="hits"></div>
 
-    <div class="ml-auto align-self-center">
+    <div class="d-flex justify-content-end ml-auto align-items-stretch profile-window">
         {{#if user}}
-        <a href="/viewuser/{{user.userId}}">
-            <img src="{{user.avatar}}" alt="{{user.name}}" /> {{user.name}}
+        <a class="d-flex justify-content-end mr-2 align-self-center" href="/viewuser/{{user.userId}}">
+            <img class="d-flex align-self-center" src="{{user.avatar}}" alt="{{user.name}}" /> <div class="d-flex align-self-center">{{user.name}}</div>
         </a>
         {{/if}}
-        <a href="/logout">
+        <a class="d-flex align-self-center" href="/logout">
             <i class="fas fa-sign-out-alt"></i>
         </a>
     </div>

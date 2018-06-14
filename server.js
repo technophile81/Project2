@@ -109,6 +109,7 @@ db.sequelize.sync({ force: true }).then(function () {
   db.User.create({
     name: "Dwayne 'the Rock' Johnson",
     avatar: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
+    coverImg: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
     rank: 'E-6',
     branch: 'army',
     deployment: 'Egypt',
