@@ -2,25 +2,13 @@
     <div class="toggler d-flex align-self-center">
 
         <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn d-flex align-item-stretch">
-                                 <i class="fas fa-bars d-flex align-self-center"></i>
-                                
-                            </button>
+        <i class="fas fa-bars d-flex align-self-center"></i>
+        </button>
 
-        {{!--
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> --}}
     </div>
 
     <div class="input-group search align-self-center">
         <form id="search-form" action="/viewsearch" method="GET">
-            {{!--
-            <span class="input-group-append">
-                <button class="btn border-0 " type="button">
-                    <i class="fa fa-search" id="postsearch"></i>
-                </button>
-            </span> --}}
             <input class="form-control border-0" type="search" placeholder="search" name="q" id="search-input">
         </form>
     </div>
@@ -39,10 +27,3 @@
     </div>
 
 </nav>
-
-<script>
-    $('[data-toggle=offcanvas]').click(function () {
-        $('.row-offcanvas').toggleClass('active');
-        $('.collapse').toggleClass('in').toggleClass('hidden-xs').toggleClass('visible-xs');
-    });
-</script>
