@@ -1,10 +1,10 @@
 <nav class="d-flex justify-content-center my-auto" id="navbartop2">
     <div class="toggler align-self-center">
-        
-            <a href="#" data-toggle="offcanvas">
-                <i class="fas fa-bars"></i>
-            </a>
-        
+
+        <a href="#" data-toggle="offcanvas">
+            <i class="fas fa-bars"></i>
+        </a>
+
         {{!--
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
     <div class="input-group col-md-8 search align-self-center">
         <span class="input-group-append">
             <button class="btn border-0 " type="button">
-                <i class="fa fa-search"></i>
+                <i class="fa fa-search" id="postsearch"></i>
             </button>
         </span>
         <input class="form-control border-0" type="search" value="search" id="example-search-input">
@@ -23,7 +23,7 @@
     </div>
     <div class="ml-auto align-self-center">
         {{#if user}} User:
-<img src="{{user.avatar}}" alt="{{user.name}}"/>
+        <img src="{{user.avatar}}" alt="{{user.name}}" />
         <a href="/viewuser/{{user.userId}}">{{user.name}}</a>
         {{/if}}
         <a href="/logout">
@@ -34,8 +34,13 @@
 </nav>
 
 <script>    
-        $('[data-toggle=offcanvas]').click(function () {
+    $('[data-toggle=offcanvas]').click(function () {
         $('.row-offcanvas').toggleClass('active');
         $('.collapse').toggleClass('in').toggleClass('hidden-xs').toggleClass('visible-xs');
-        });
+    });
+
+    
+    
+
+
 </script>
