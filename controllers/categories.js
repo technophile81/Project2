@@ -18,7 +18,7 @@ router.get("/viewcategory/:id", isAuthenticated, function (req, res) {
         db.Thread.findAll({
             attributes: {
                 include: [
-                    [ sequelize.fn('COUNT', sequelize.col('Posts.postId')), 'postCount' ],
+                    [sequelize.fn('COUNT', sequelize.col('Posts.postId')), 'postCount'],
                 ],
             },
             where: {
@@ -36,7 +36,7 @@ router.get("/viewcategory/:id", isAuthenticated, function (req, res) {
                 },
             ],
             order: [
-                [ 'createdAt', 'DESC' ],
+                ['createdAt', 'DESC'],
             ],
         }).then(function (data) {
             for (let thread of data) {
@@ -51,5 +51,54 @@ router.get("/viewcategory/:id", isAuthenticated, function (req, res) {
     })
 });
 
+function getCategoryAndThreads(catId) {
+    return function (resolve, reject) {
+        db.Category.findOne({
+            where: { categoryId: catId }
+        })
+            .then(function (catdata) {
+                db.Thread.findAll({
+                    where: { 
+                        categoryId: catId 
+                    },
+                    order: [
+                        ['createdAt', 'DESC']
+                    ],
+                    limit: 5
+                }).then(function (threaddata) {
+                    resolve({
+                        category: catdata,
+                        threads: threaddata,
+                    });
+                    console.log(catdata);
+                    console.log(threaddata);
+                })
+            });
+    };
+    console.log(catId);
+};
+
+router.get("/forum", isAuthenticated, function (req, res) {
+    db.Category.findAll({}, function (catlist) {
+        console.log(catlist);
+        let catpromises = [];
+        console.log(catpromises);
+
+        for (let cat in catlist) {
+            catpromises.push(new Promise(getCategoryAndThreads(cat.categoryId)));
+            console.log(cat);
+        };
+        console.log(catlist);
+
+        Promise.all(catpromises, function (values) {
+            var hbsObject = {
+                'categoriesWithThreads': values
+            };
+
+            res.renderWithContext("categorylist", hbsObject);
+        });
+    }
+    )
+});
 
 module.exports = router;

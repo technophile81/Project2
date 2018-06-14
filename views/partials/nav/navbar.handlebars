@@ -22,9 +22,10 @@
 
     </div>
     <div class="ml-auto align-self-center">
-        {{#if user}} User:
+        {{#if user}}
+        <a href="/viewuser/{{user.userId}}">
 <img src="{{user.avatar}}" alt="{{user.name}}"/>
-        <a href="/viewuser/{{user.userId}}">{{user.name}}</a>
+        {{user.name}}</a>
         {{/if}}
         <a href="/logout">
             <i class="fas fa-sign-out-alt"></i>
