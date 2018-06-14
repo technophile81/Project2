@@ -6,6 +6,20 @@ var router = express.Router();
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
+// router.post("/views//profileform", isAuthenticated, function(req, res) {
+
+//     let newUser={
+//         name: req.body.name,
+//         branch: req.body.branch,
+//         rank: req.body.rank,
+//         mos: req.body.mos,
+//         deployments: req.body.deployments,
+//         bio: req.body.bio
+//     }
+
+//     db.User.create(req.user.User) 
+// });
+
 router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 
     db.User.findOne({
@@ -48,11 +62,14 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
     })
 });
 
-
 router.get("/editprofile", isAuthenticated, function (req, res) {
+   
     var hbsObject = {};
+
     res.renderWithContext("editprofile", hbsObject);
 });
+
+
 
 router.post("/editprofile", isAuthenticated, function (req, res) {
     var changes = {
@@ -71,16 +88,3 @@ router.post("/editprofile", isAuthenticated, function (req, res) {
 });
 
 module.exports = router;
-
-    // Use the parameters passed in `req.body` to update the
-    // current user's record in the database.
-
-    // look at all the appropriate fields in req.body and construct a set: object to pass to db.User.update, and the where object will just be { userId: req.user.userId }
-
-
-        // Everything necessary to render this template is available
-    // in `user.User` in the context given by `renderWithContext()`.
-    // 
-    // That said, if it is desired to have services or ranks rendered
-    // in the form with `#each`, the lists for those should be added
-    // to `hbsObject`.
