@@ -1,49 +1,79 @@
-<nav class="d-flex align-self-stretch h-100 bkgd flex-column">
-    <a class="navbar-brand" href="#">
-        <img src="/images/logo.png" id="logo" width="30" height="30" alt="">
-        <span class="collapse in hidden-xs">PTSDNet</span>
-    </a>
-    <h2>
-        <i class='far fa-list-alt'></i>
-        <span class="collapse in hidden-xs">Category</span>
-    </h2>
+<div class="sidebar-header">
+    <h3>
+        <img src="/images/logo.png" id="logo" width="30" height="30" alt="">PTSDNet</h3>
+    <strong><img src="/images/logo.png" id="logo" width="30" height="30" alt=""></strong>
 
-    <ul class="nav flex-column flex-nowrap">
+</div>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">FORUM
-                <i class='fas fa-chevron-right'></i>
-            </a>
-            <div class="collapse" id="submenu1" aria-expanded="false">
-                {{#if categories}}
-                <ul>
+<ul class="list-unstyled CTAs" style="
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+">
+    <li>
+        <a href="#" class="myevents"><i class='far fa-list-alt'></i>Category</a>
+    </li>
+</ul>
 
-                    {{#each categories}}
-                    <li>
 
-                        <a class="d-flex justify-content-around" href="/viewcategory/{{this.categoryId}}">{{this.categoryName}}
-                            <i class="fas fa-greater-than"></i>
-                        </a>
-                    </li>
-                    {{/each}}
-                </ul>
-                {{/if}}
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">EVENTS
-                <i class='fas fa-chevron-right'></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">ACCESSMENT
-                <i class='fas fa-chevron-right'></i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">PROFILE
-                <i class='fas fa-chevron-right'></i>
-            </a>
-        </li>
-    </ul>
-</nav>
+<ul class="list-unstyled components" style="padding-top: 0px;"
+>
+    <li>
+    
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class='far fa-list-alt'></i>
+            FORUM
+        </a>
+        {{#if categories}}
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+
+            {{#each categories}}
+            <li>
+
+                <a href="/viewcategory/{{this.categoryId}}">{{this.categoryName}}
+                    <i class="fas fa-greater-than"></i>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+    </li>
+    <li>
+        <a href="#">
+            <i class="fas fa-calendar-alt"></i>
+            EVENT
+        </a>
+
+
+    </li>
+    <li>
+        <a href="#">
+            <i class="fas fa-pencil-alt"></i>
+            ASSESSMENT
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="far fa-user"></i>
+            PROFILE
+        </a>
+    </li>
+
+</ul>
+
+<ul class="list-unstyled CTAs">
+    <li>
+        <a href="#" class="myevents"><i class="fas fa-calendar-alt"></i>My Events</a>
+    </li>
+    
+</ul>
+
+
+
+
+
+                
+
+                
+    

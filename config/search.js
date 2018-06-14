@@ -11,8 +11,8 @@ var index = client.initIndex("test");
 
 var mysql = require("mysql");
 
-var db = require("../models");
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+// var db = require("../models");
+// var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 var connection = mysql.createConnection({
   host: "127.0.0.1",
@@ -25,7 +25,7 @@ var connection = mysql.createConnection({
 });
 
 connection.connect();
-connection.query("SELECT * FROM Posts", (err, results) => {
+connection.query("SELECT * FROM Post", (err, results) => {
   if (err) throw err;
   index.addObjects(results);
 });

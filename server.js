@@ -11,6 +11,7 @@ var session = require("express-session");
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
+var search = require("./config/search");
 
 
 // Sets up the Express App
