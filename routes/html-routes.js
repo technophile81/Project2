@@ -11,8 +11,13 @@ var path = require("path");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-    res.redirect("/home");
+    
+    if (req.user) {
+      res.redirect("/forum");
+    } else { res.redirect("/home"); }
   });
+
+ 
 
   app.get("/login", function (req, res) {
     res.render("login");
