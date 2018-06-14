@@ -48,4 +48,39 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
     })
 });
 
+
+router.get("/editprofile", isAuthenticated, function (req, res) {
+    var hbsObject = {};
+    res.renderWithContext("editprofile", hbsObject);
+});
+
+router.post("/editprofile", isAuthenticated, function (req, res) {
+    var changes = {
+        name: req.body.name,
+        rank: req.body.rank,
+        branch: req.body.branch,
+        bio: req.body.bio,
+        deployment: req.body.deployment
+    };
+ 
+    db.User.update(changes, {
+        where: { userId: req.user.userId },
+    }).then(function () {
+        res.redirect("/viewuser/" + req.user.userId);
+    });
+});
+
 module.exports = router;
+
+    // Use the parameters passed in `req.body` to update the
+    // current user's record in the database.
+
+    // look at all the appropriate fields in req.body and construct a set: object to pass to db.User.update, and the where object will just be { userId: req.user.userId }
+
+
+        // Everything necessary to render this template is available
+    // in `user.User` in the context given by `renderWithContext()`.
+    // 
+    // That said, if it is desired to have services or ranks rendered
+    // in the form with `#each`, the lists for those should be added
+    // to `hbsObject`.
