@@ -11,7 +11,7 @@ var session = require("express-session");
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-
+var addPostToIndex = require("./config/search");
 
 // Sets up the Express App
 // =============================================================
@@ -161,7 +161,10 @@ db.sequelize.sync({ force: true }).then(function () {
               postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
               userId: testuser.userId,
               threadId: testthread.threadId
-            }]);
+            }]).then(function () {
+              addPostToIndex(1);
+              addPostToIndex(2);
+            });
 
             db.Subscription.create({
               userId: testuser.userId,

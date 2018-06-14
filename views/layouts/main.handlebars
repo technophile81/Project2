@@ -49,43 +49,6 @@
         </div>
     </div>
 
-    <script type="text/html" id="hit-template">
-        <div class="hit">
-          <p class="hit-company">{{{_highlightResult.postTitle.value}}}</p>
-          <p class="hit-name">{{{_highlightResult.postContent.value}}}</p>
-        </div>
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.js"></script>
-
-    <script>
-        var search = instantsearch({
-            // Replace with your own values
-            appId: 'O5KV8UHS7Z',
-            apiKey: '5e326e2f9bfd5b7778c1e92cf60d6a4a', // search only API key, no ADMIN key
-            indexName: 'test',
-            urlSync: true,
-
-        });
-
-        search.addWidget(
-            instantsearch.widgets.searchBox({
-                container: '#example-search-input'
-            })
-        );
-
-        search.addWidget(
-            instantsearch.widgets.hits({
-                container: '#hits',
-                templates: {
-                    item: document.getElementById('hit-template').innerHTML,
-                    empty: "We didn't find any results for the search <em>\"{{query}}\"</em>"
-                }
-            })
-        );
-
-        search.start();
-    </script>
 </body>
 
 </html>

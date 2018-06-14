@@ -1,0 +1,14 @@
+SEARCH FOR '{{searchQuery}}' RETURNED {{numHits}} HITS!
+<br>
+<br>
+<ul>
+{{#each hits}}
+<li><ul>
+<li>POST: <a href="/viewthread/{{this.threadId}}#post-{{this.postId}}">{{this.postTitle}} (ID: {{this.postId}})</a></li>
+<li>USER: {{this.userName}} (ID: {{this.userId}})</li>
+<li>THREAD ID: {{this.threadId}}</li>
+<li>CATEGORY: {{this.categoryName}}</li>
+<li>SNIPPET: {{{this._snippetResult.postContent.value}}}</li>
+</ul></li>
+{{/each}}
+</ul>

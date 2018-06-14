@@ -13,19 +13,23 @@
     </div>
 
     <div class="input-group col-md-8 search align-self-center">
+        <form id="search-form" action="/viewsearch" method="GET">
         <span class="input-group-append">
             <button class="btn border-0 " type="button">
                 <i class="fa fa-search" id="postsearch"></i>
             </button>
         </span>
-        <input class="form-control border-0" type="search" value="search" id="example-search-input">
-
+            <input class="form-control border-0" type="search" placeholder="search" name="q" id="search-input">
+        </form>
     </div>
+
+    <div id="hits"></div>
+
     <div class="ml-auto align-self-center">
         {{#if user}}
         <a href="/viewuser/{{user.userId}}">
-<img src="{{user.avatar}}" alt="{{user.name}}"/>
-        {{user.name}}</a>
+            <img src="{{user.avatar}}" alt="{{user.name}}" /> {{user.name}}
+        </a>
         {{/if}}
         <a href="/logout">
             <i class="fas fa-sign-out-alt"></i>
@@ -34,14 +38,9 @@
 
 </nav>
 
-<script>    
+<script>
     $('[data-toggle=offcanvas]').click(function () {
         $('.row-offcanvas').toggleClass('active');
         $('.collapse').toggleClass('in').toggleClass('hidden-xs').toggleClass('visible-xs');
     });
-
-    
-    
-
-
 </script>

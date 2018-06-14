@@ -7,8 +7,7 @@ var subscriptionsController = require("../controllers/subscriptions");
 var followersController = require("../controllers/followers");
 var usersController = require("../controllers/users");
 var homeController = require("../controllers/home");
-
-// var searchController = require("../controllers/search");
+var searchController = require("../controllers/search");
 
 module.exports = function(app) {
   app.use(categoriesController);
@@ -18,5 +17,5 @@ module.exports = function(app) {
   app.use(followersController);
   app.use(usersController);
   app.use(homeController);
-  // app.use(searchController);
+  app.use(searchController);
 };
