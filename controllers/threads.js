@@ -52,6 +52,6 @@ router.get("/viewthread/:id", isAuthenticated, function (req, res) {
             res.renderWithContext("postlist", hbsObject);
         });
     })
-})
+});
 
 module.exports = router;

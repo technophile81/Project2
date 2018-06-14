@@ -6,6 +6,8 @@ var router = express.Router();
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
+var addPostToIndex = require("../config/search");
+
 router.get("/postform", isAuthenticated, function (req, res) {
     var hbsObject = {};
     if (req.query.category_id) {
@@ -83,6 +85,7 @@ router.post("/postform", isAuthenticated, function (req, res) {
                 // db.Subscription.create userid and thread id
                 // no waiting for the result on this
                 // after creating, then subscribe, then return to redirect (three levels of .then)
+                addPostToIndex(newpost.postId);
                 res.redirect("/viewthread/" + newpost.threadId);
             });
         });
@@ -96,6 +99,7 @@ router.post("/postform", isAuthenticated, function (req, res) {
             postContent: req.body.post_content,
             userId: req.user.userId,
         }).then(function (newpost) {
+            addPostToIndex(newpost.postId);
             res.redirect("/viewthread/" + newpost.threadId);
         });
 
@@ -120,6 +124,7 @@ router.post("/postform", isAuthenticated, function (req, res) {
                         userId: req.user.userId,
                     }
                 }).then(function (updatedpost) {
+                    addPostToIndex(updatedpost.postId);
                     res.redirect("/viewthread/" + updatedpost.threadId);
                 });
             });
