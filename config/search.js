@@ -11,34 +11,51 @@ var index = client.initIndex("test");
 
 var mysql = require("mysql");
 
-// var db = require("../models");
-// var isAuthenticated = require("../config/middleware/isAuthenticated");
+var db = require("../models");
 
-var connection = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "root",
-  database: "vetPTSDapp",
-  port: 8889,
-  
-
+index.setSettings({
+  searchableAttributes: [
+    "userName",
+    "postTitle",
+    "postContent",
+  ],
+  attributesToSnippet: [
+    "postContent:80",
+  ],
+}, function (err, content) {
+  console.log(content);
 });
 
-connection.connect();
-connection.query("SELECT * FROM Post", (err, results) => {
-  if (err) throw err;
-  index.addObjects(results);
-});
+function addPostToIndex(postId) {
+  db.Post.findOne({
+    where: { postId: postId },
+    include: [
+      { model: db.User },
+      {
+        model: db.Thread,
+        include: [
+          { model: db.Category },
+        ]
+      },
+    ],
+  }).then(function (postData) {
 
+    let searchObject = {
+      'objectID': 'post:' + postData.postId,
+      'postId': postData.postId,
+      'postTitle': postData.postTitle,
+      'postContent': postData.postContent,
+      'categoryName': postData.Thread.Category.categoryName,
+      'threadId': postData.threadId,
+      'userId': postData.userId,
+      'userName': postData.User.name,
+    };
 
-// index.setSettings(
-//   {
-//     searchableAttributes: ["postId", "postTitle", "postContent"]
-//   },
-//   function(err, content) {
-//     console.log(content);
-//   }
-// );
+    index.addObjects([searchObject]);
+  });
+}
+
+module.exports = addPostToIndex;
 
 // index.search("title").then(result => {
 //   console.log(result.nbHits);
