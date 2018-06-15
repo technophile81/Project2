@@ -4,17 +4,17 @@
     height: 240px;
     background-size: cover;
     background-position: left center;
-    margin-top: -30px;
-    margin-left: -15px;
-    width: 103%;
+    margin-top: -15px;
+   /* margin-left: -15px;
+    width: 103%;*/
     z-index: 1;
-};
+}
 
-#profileview .p-usermain { padding-bottom: 30px; }
 #profileview .row-nopad-left { padding-left: 0; }
 #profileview .row-nopad-right { padding-right: 0; }
 
-#profileview .p-branch { float: right; right: 30px; bottom: 30px; }
+#profileview .p-branch { 
+    float: right; margin: 15px; }
 
 #profileview .row-nopad-right h2 {
 
@@ -22,14 +22,15 @@
         color: rgba(54,70,80,1);
         font-size: 1em;
         letter-spacing: 2px; 
-        padding-left: 30px;
+        /*padding-left: 30px;*/
         padding-bottom: 15px;
-        margin-bottom: 0;
-        border-bottom: 1px solid rgba(54,70,80,1);
-;
-    
+        margin-bottom: 15px;
+        border-bottom: 1px solid rgba(54,70,80,1);    
 }
 #profileview .row-nopad-right h2 i { margin-right: 5px; }
+
+#profileview .deployment,
+#profileview .mos { margin-bottom: 30px; }
 
 #profileview .p-name { font-size: 1.3em; margin-right: 15px; }
 #profileview .p-timestamp { font-size: 0.85em; }
@@ -67,6 +68,18 @@
 .p-namegroup,
 .p-buttons { padding-top: 15px; }
 
-#profileview .bio { margin-bottom: 30px; }
+#profileview .bio { 
+    margin-top: 30px; 
+    margin-bottom: 30px; }
+
+#myTab { margin-bottom: 30px; }
+
+.tab-content .p-avatar {
+    margin-top: 0px!important; }
+
+#profileview .thread-details { padding-bottom: 0;}
+#profileview .thread-list { padding-top: 0; }
 
 #profileview div.thread-details:nth-child(1) .post-title h2 { font-size: 1em;  }
+
+#profileview .post-options { display: none!important; }

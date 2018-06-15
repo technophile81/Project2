@@ -2,57 +2,57 @@
 <div id="profileview">
     {{#if profile.coverImg}}
     <div class="cover" style="background-image: url({{profile.coverImg}});">
-    {{else}}
-    <div class="cover" style="background-image: url(/images/bkgd-home.jpg);">
-    {{/if}}
-        <div class="p-branch">{{profile.branch}}</div>
-        <div class="cover-bkgd"></div>
-    </div>
-
-    <div class="d-flex flex-row p-usermain">
-        <div class="p-avatar">
-            {{#if profile.avatar}}
-            <img src="{{profile.avatar}}" alt="{{profile.name}}" />
-            {{else}}
-            <img src="/images/user-avatar.png" alt="{{profile.name}}" />
+        {{else}}
+        <div class="cover" style="background-image: url(/images/bkgd-home.jpg);">
             {{/if}}
+            <div class="p-branch branch-img {{profile.branch}}"></div>
+            <div class="cover-bkgd"></div>
         </div>
-        <div class="p-namegroup d-flex flex-column">
-            <div class="p-namerank d-flex flex-row">
-                <h2 class="p-name">{{profile.name}}</h2>
-                <div class="p-rank">{{profile.rank}}</div>
-            </div>
-            <div class="p-timestamp d-flex">Joined: {{profile.createdAt}}</div>
-        </div>
-        <div class="p-buttons ml-auto">
-            {{#if user}}
-            <a href="/editprofile">
-                <i class="foo fas fa-user"></i> Edit</a>
-            {{else}}
-            <div class="following">
-                <button id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
-                    {{#if profile.Followers}}
-                    <i class="foo fas fa-user"></i> Unfollow {{else}}
-                    <i class="foo far fa-user"></i> Follow {{/if}}
-                </button>
-            </div>
-            {{/if}}
-        </div>
-    </div>
-    <div class="d-flex bio">
-        <div class="col-lg-9 col-sm-12 row-nopad-left">
-            <div class="category-name">Bio</div>
-            <div>{{profile.bio}}</div>
-        </div>
-        <div class="col-lg-3 col-sm-12 row-nopad-right">
-            <h2><i class="fas fa-map-signs"></i> Last Deployment</h2>
-            <div>{{profile.deployment}}</div>
-            <h2><i class="fas fa-briefcase"></i> Last MOS</h2>
-            <div>{{profile.mos}}</div>
-        </div>
-</div>
 
-<div></div>
+        <div class="d-flex text p-usermain">
+            <div class="p-avatar">
+                {{#if profile.avatar}}
+                <img src="{{profile.avatar}}" alt="{{profile.name}}" /> {{else}}
+                <img src="/images/user-avatar.png" alt="{{profile.name}}" /> {{/if}}
+            </div>
+            <div class="p-namegroup d-flex flex-column">
+                <div class="p-namerank d-flex flex-row">
+                    <h2 class="p-name">{{profile.name}}</h2>
+                    <div class="p-rank rank-img {{profile.branch}}-{{profile.rank}}"></div>
+                </div>
+                <div class="p-timestamp d-flex">Joined: {{profile.createdAt}}</div>
+            </div>
+            <div class="p-buttons ml-auto">
+                {{#if myProfile}}
+                <a class="btn btn-secondary" href="/editprofile">
+                    <i class="foo fas fa-user"> <span>Edit</span></i></a>
+                {{else}}
+                <div class="following">
+                    <button class="btn btn-secondary" id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
+                        {{#if profile.Followers}}
+                        <i class="foo fas fa-user"> <span>Unfollow</span></i>{{else}}
+                        <i class="foo far fa-user"> Follow</i>{{/if}}
+                    </button>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        <div class="d-flex bio">
+            <div class="col-lg-9 col-sm-12 row-nopad-left">
+                <div class="category-name">Bio</div>
+                <div>{{profile.bio}}</div>
+            </div>
+            <div class="col-lg-3 col-sm-12 row-nopad-right">
+                <h2>
+                    <i class="fas fa-map-signs"></i> Last Deployment</h2>
+                <div class="deployment">{{profile.deployment}}</div>
+                <h2>
+                    <i class="fas fa-briefcase"></i> Last MOS</h2>
+                <div class="mos">{{profile.mos}}</div>
+            </div>
+        </div>
+
+        <div></div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Post History</a>
@@ -79,7 +79,23 @@
             <div class="tab-pane fade" id="follow" role="tabpanel" aria-labelledby="follow-tab">
                 <ul>
                     {{#each followeds}}
-                    <li> <a href="/viewuser/{{this.userId}}">{{this.name}}</a> </li>
+
+                    <a href="/viewuser/{{this.userId}}">
+                        <div class="p-avatar">
+
+                            {{#if this.avatar}}
+
+                            <img src="{{this.avatar}}" alt="{{this.name}}" /> {{else}}
+                            <img src="/images/user-avatar.png" alt="{{this.name}}" /> {{/if}}
+                        </div>
+                        <div class="p-namegroup d-flex flex-column">
+                            <div class="p-namerank d-flex flex-row">
+                                <h2 class="p-name">{{this.name}}</h2>
+                                <div class="p-rank rank-img {{this.branch}}-{{this.rank}}"></div>
+                            </div>
+
+                        </div>
+                    </a>
                     {{/each}}
                 </ul>
             </div>

@@ -1,7 +1,7 @@
 
     <div class="thread-details d-flex flex-row" data-threadId="{{this.threadId}}">
         <a name="post-{{this.postId}}"></a>
-        <div class="userinfo mr-4">
+        <div class="userinfo mr-2">
             <div class="avatar">
                 <a href="/viewuser/{{this.User.userId}}">
                     {{#if this.User.avatar}}
@@ -19,8 +19,10 @@
                 </div>
             </div>
             <div class="details-middle d-flex flex-inline mb-3">
-                <div class="post-author mr-2">Posted by: <span>{{this.User.name}}</span></div>
-                <div class="post-rank mr-2">RANK</div>
+                <div class="post-author mr-2">Posted by: 
+                    <a href="/viewuser/{{this.User.userId}}">{{this.User.name}}</a>
+                </div>
+                <div class="p-rank rank-img {{this.User.branch}}-{{this.User.rank}} mr-2"></div>
                 <div class="post-time mr-2">{{this.postTime}}</div>
             </div>
             <div class="details-content">
@@ -28,12 +30,12 @@
                     {{{this.postContent}}}
                 </div>
             </div>
-            <div class="d-flex">
+            <div class="d-flex post-options">
                 <form class="details-btm flex-inline d-flex" method="GET" action="/postform">
                 <div class="reply mr-2">
                     <i class="fas fa-reply"></i>
                     <input type="hidden" name="thread_id" value="{{this.threadId}}">
-                    <input type="submit" class="reply btn btn-primary ml-auto" value="Reply" />
+                    <input type="submit" class="reply btn btn-secondary ml-auto" value="Reply" />
                 </div>
                 </form>
                 <form class="details-btm flex-inline d-flex" method="GET" action="/postform">
@@ -41,7 +43,7 @@
                 <div class="edit">
                     <i class="fas fa-edit"></i>
                     <input type="hidden" name="post_id" value="{{this.postId}}">
-                    <input type="submit" class="newpost btn btn-primary" value="Edit" />
+                    <input type="submit" class="newpost btn btn-secondary" value="Edit" />
                 </div>
                 {{/if}}
                 </form>

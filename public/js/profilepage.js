@@ -21,8 +21,11 @@ $(document).ready(function () {
                 $("#" + followedButtonId + " > i").removeClass("fas far"); 
                 if (res.following) {
                     $("#" + followedButtonId + " > i").addClass("fas");
+                    $("#" + followedButtonId + " > i").text(" Unfollow");
+
                 } else {
                     $("#" + followedButtonId + " > i").addClass("far");
+                    $("#" + followedButtonId + " > i").text(" Follow");
                 }
             }
         });            
