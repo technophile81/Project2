@@ -83,15 +83,11 @@ app.set("view engine", "handlebars");
 // then add `categories` to the Handlebars context.
 app.use(function (req, res, next) {
   res.renderWithContext = function(template, context) {
-    if (req.user) {
-      db.User.findOne({
-        where: { userId: req.user.userId },
-      }).then(function (userdata) {
-        db.Category.findAll({}).then(function (catdata) {
-          context.user = userdata;
-          context.categories = catdata;
-          res.render(template, context);
-        });
+    if (req.user && req.user.User) {
+      db.Category.findAll({}).then(function (catdata) {
+        context.user = req.user.User;
+        context.categories = catdata;
+        res.render(template, context);
       });
     } else {
       res.render(template, context);
