@@ -493,7 +493,7 @@ textarea {
     height: 44px; 
     border-radius: 50%; 
     border: 2px solid rgba(196,155,116,0.5); } 
-
+.profile-window .username { margin-right: 15px; }
 /* .profile-window .nav-avatar {
     
     width: 44px;

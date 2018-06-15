@@ -131,20 +131,19 @@ db.sequelize.sync({ force: (db.process_env !== "production") }).then(function ()
             categoryName: "General"
           }).then(function (testcat) {
             db.Category.bulkCreate([
-              { categoryName: "Stuff" },
-              { categoryName: "Random" },
+              { categoryName: "Relationships" },
+              { categoryName: "Stress Management" },
               { categoryName: "Family" },
-              { categoryName: "Lorem Ipsum" },
-              { categoryName: "Dolor Sit" }
+              { categoryName: "Random" }
             ]);
 
             db.Thread.bulkCreate([{
-              threadTitle: "This is a thread title",
+              threadTitle: "My wife is mad at me",
               userId: testuser.userId,
               categoryId: testcat.categoryId,
             },
               {
-                threadTitle: "This is another thread title",
+                threadTitle: "I don't want to go to school today",
                 userId: testuser.userId,
                 categoryId: testcat.categoryId,
               }]).then(function () {

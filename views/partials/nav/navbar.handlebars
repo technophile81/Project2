@@ -19,11 +19,11 @@
         {{#if user}} {{#if user.avatar}}
         <a class="d-flex justify-content-end mr-2 align-self-center nav-avatar" href="/viewuser/{{user.userId}}">
             <img class="d-flex align-self-center" src="{{user.avatar}}" alt="{{user.name}}" /></a>
-            <a class="d-flex align-self-center" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
+            <a class="d-flex align-self-center username" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
         {{else}}
         <a class="d-flex justify-content-end mr-2 align-self-center nav-avatar" href="/viewuser/{{user.userId}}">
             <img src="/images/user-avatar.png" alt="{{user.name}}" /></a>
-            <a class="d-flex align-self-center" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
+            <a class="d-flex align-self-center username" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
         {{/if}} {{/if}}
         <a class="d-flex align-self-center" href="/logout">
             <i class="fas fa-sign-out-alt"></i>
