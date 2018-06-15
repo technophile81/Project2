@@ -116,7 +116,7 @@ db.sequelize.sync({ force: (db.process_env !== "production") }).then(function ()
         coverImg: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
         rank: 'E-6',
         branch: 'army',
-        deployment: 'Egypt',
+        deployment: 'Iraq',
         mos: 'Awesome',
         bio: 'Kicked names, took ass.'
       }).then(function (testuser) {
