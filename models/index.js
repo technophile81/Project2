@@ -33,5 +33,6 @@ Object.keys(db).forEach(function(modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+db.process_env = env;
 
 module.exports = db;

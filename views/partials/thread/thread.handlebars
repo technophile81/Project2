@@ -2,8 +2,12 @@
 
     <div class=" d-flex flex-row mr-auto align-self-center" data-threadId="{{this.threadId}}">
         <div class="avatar mr-2">
-            <a href="https://placeholder.com">
-                <img src="http://via.placeholder.com/50x50">
+            <a href="/viewuser/{{this.User.userId}}">
+                {{#if this.User.avatar}}
+                <img src="{{this.User.avatar}}">
+                {{else}}
+                <img src="/images/user-avatar.png">
+                {{/if}}
             </a>
         </div>
         <div class="d-flex flex-column align-self-center">
@@ -14,9 +18,10 @@
                 
             </div>
             <div class="details-middle d-inline-flex">
-                <div class="post-author mr-2">Started by: 
+                <div class="post-author mr-1">Started by: 
                     <a href="/viewuser/{{this.User.userId}}">{{this.User.name}}</a>
                 </div>
+                <div class="p-rank rank-img {{this.User.branch}}-{{this.User.rank}} mr-2"></div>
                 <div class="post-time mr-2">{{this.threadTime}}</div>
                 <div class="post-cat mr-2">{{this.Category.categoryName}}</div>
             </div>

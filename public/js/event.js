@@ -111,7 +111,7 @@ $(document).ready(function () {
         let eventId = $(this).attr("data-event-id");
         console.log(eventId);
 
-        window.location.href = "/z/event/edit/" + eventId;
+        window.location.href = "/event/edit/" + eventId + "?event_id=" + eventId;
 
 
         //end edit data function

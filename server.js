@@ -16,7 +16,7 @@ var addPostToIndex = require("./config/search");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -79,10 +79,10 @@ app.set("view engine", "handlebars");
 // then add `categories` to the Handlebars context.
 app.use(function (req, res, next) {
   res.renderWithContext = function(template, context) {
-    if (req.user) {
-      db.Category.findAll({}).then(function (data) {
+    if (req.user && req.user.User) {
+      db.Category.findAll({}).then(function (catdata) {
         context.user = req.user.User;
-        context.categories = data;
+        context.categories = catdata;
         res.render(template, context);
       });
     } else {
@@ -103,91 +103,91 @@ require("./routes/event-attending-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function () {
-  // REMOVE LATER
-  db.User.create({
-    name: "Dwayne 'the Rock' Johnson",
-    avatar: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
-    coverImg: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
-    rank: 'E-6',
-    branch: 'army',
-    deployment: 'Egypt',
-    mos: 'Awesome',
-    bio: 'Kicked names, took ass.'
-  }).then(function (testuser) {
-    db.Credential.create({
-      userId: testuser.userId,
-      credentialSource: 'local',
-      credentialName: 'test@example.com',
-      credentialSecret: '1234',
-    });
-    db.Category.create(
-      {
-        categoryName: "General"
-      }).then(function (testcat) {
-        db.Category.bulkCreate([{
-          categoryName: "Stuff"
-        }, {
-          categoryName: "Random"
-        }, {
-          categoryName: "Family"
-        },
-        {
-          categoryName: "Lorem Ipsum"
-        },
-        {
-          categoryName: "Dolor Sit"
-        }]);
+db.sequelize.sync({ force: (db.process_env !== "production") }).then(function () {
+  db.User.findOne({
+    where: {
+      userId: 1,
+    },
+  }).then(function (finduser) {
+    if (!finduser) {
+      db.User.create({
+        name: "Dwayne 'the Rock' Johnson",
+        avatar: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
+        coverImg: "https://r.hswstatic.com/w_907/gif/tesla-cat.jpg",
+        rank: 'E-6',
+        branch: 'army',
+        deployment: 'Iraq',
+        mos: 'Awesome',
+        bio: 'Kicked names, took ass.'
+      }).then(function (testuser) {
+        db.Credential.create({
+          userId: testuser.userId,
+          credentialSource: 'local',
+          credentialName: 'test@example.com',
+          credentialSecret: '1234',
+        });
+        db.Category.create(
+          {
+            categoryName: "General"
+          }).then(function (testcat) {
+            db.Category.bulkCreate([
+              { categoryName: "Relationships" },
+              { categoryName: "Stress Management" },
+              { categoryName: "Family" },
+              { categoryName: "Random" }
+            ]);
 
-        db.Thread.bulkCreate([{
-          threadTitle: "This is a thread title",
-          userId: testuser.userId,
-          categoryId: testcat.categoryId,
-        },
-        {
-          threadTitle: "This is another thread title",
-          userId: testuser.userId,
-          categoryId: testcat.categoryId,
-        }]).then(function () {
-          db.Thread.findOne({}).then(function (testthread) {
-            db.Post.bulkCreate([{
-              postTitle: "This is a test title",
-              postContent: "Lorem ipsum dolor sit amet lkja lkjf",
+            db.Thread.bulkCreate([{
+              threadTitle: "My wife is mad at me",
               userId: testuser.userId,
-              threadId: testthread.threadId
+              categoryId: testcat.categoryId,
             },
-            {
-              postTitle: "This is a reply title",
-              postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
-              userId: testuser.userId,
-              threadId: testthread.threadId
-            }]).then(function () {
-              addPostToIndex(1);
-              addPostToIndex(2);
-            });
+              {
+                threadTitle: "I don't want to go to school today",
+                userId: testuser.userId,
+                categoryId: testcat.categoryId,
+              }]).then(function () {
+                db.Thread.findOne({}).then(function (testthread) {
+                  db.Post.bulkCreate([{
+                    postTitle: "This is a test title",
+                    postContent: "Lorem ipsum dolor sit amet lkja lkjf",
+                    userId: testuser.userId,
+                    threadId: testthread.threadId
+                  },
+                    {
+                      postTitle: "This is a reply title",
+                      postContent: "Lorem ipsum dolor sit amet lkja lkjf reply crap blah blah blah",
+                      userId: testuser.userId,
+                      threadId: testthread.threadId
+                    }]).then(function () {
+                      addPostToIndex(1);
+                      addPostToIndex(2);
+                    });
 
-            db.Subscription.create({
-              userId: testuser.userId,
-              threadId: testthread.threadId
-            });
+                  db.Subscription.create({
+                    userId: testuser.userId,
+                    threadId: testthread.threadId
+                  });
 
-            db.User.create({
-              name: "Jack Black",
-              rank: 'E-1',
-              branch: 'army',
-              deployment: 'Jumanji',
-              mos: 'Feminine',
-              bio: 'OMG.'
-            }).then(function (testfollowed) {
-              db.Follower.create({
-                followerId: testuser.userId,
-                followedId: testfollowed.userId
+                  db.User.create({
+                    name: "Jack Black",
+                    rank: 'E-1',
+                    branch: 'army',
+                    deployment: 'Jumanji',
+                    mos: 'Feminine',
+                    bio: 'OMG.'
+                  }).then(function (testfollowed) {
+                    db.Follower.create({
+                      followerId: testuser.userId,
+                      followedId: testfollowed.userId
+                    });
+                  });
+                });
               });
-            });
-          })
-        })
-      })
-  })
+          });
+      });
+    }
+  });
 });
 
 // REMOVE LATER

@@ -8,14 +8,14 @@
     </ol>
   </nav>
 
-  <form class="ml-auto" method="GET" action="/postform">
+{{!--   <form class="ml-auto" method="GET" action="/postform">
     <input type="hidden" name="category_id" value="{{category.categoryId}}">
     <input type="submit" class="newpost btn btn-primary" value="New Thread" />
-  </form>
+  </form> --}}
 </div>
 
 {{#each categoriesWithThreads}}
-<div class="category-name">{{this.category.categoryName}}</div>
+<a href="/viewcategory/{{this.category.categoryId}}"><div class="category-name">{{this.category.categoryName}}</div></a>
 <div class="threadbody">
   {{#each threads}} {{> thread/thread}} {{/each}}
 </div>

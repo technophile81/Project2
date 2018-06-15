@@ -1,7 +1,11 @@
 {{#if profile.following}}
 <div class="avatar">
-    <a href="https://placeholder.com">
-        <img src="http://via.placeholder.com/100x100">
+    <a href="/viewuser/{{profile.userId}}">
+        {{#if profile.avatar}}
+        <img src="{{profile.avatar}}">
+        {{else}}
+        <img src="/images/user-avatar.png">
+        {{/if}}
     </a>
 </div>
 <div class="follower mr-2">

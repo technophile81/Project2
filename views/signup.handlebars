@@ -1,15 +1,16 @@
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div>
-  </nav>
+   <link rel="stylesheet" href="../css/home.css" media="screen" title="no title">
+<div id="home">
+  {{nav/navbar-home}}
+
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
+    <div class="row forms justify-content-center">
+      <div class="col-lg-5 col-sm-12 logbox">
+        <div class="card d-flex align-self-center">
+          <article class="card-body">
+            <a href="/login" class="float-right btn btn-outline-primary">Login</a>
+            <h4 class="card-title mb-4 mt-1">Create New Account</h4>
+            <form class="signup">
+                        <div class="form-group">
             <label for="nameInput">Name: </label>
             <input type="text" class="form-control" id="name-input" placeholder="Name">
           </div>
@@ -17,19 +18,203 @@
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
+              <!-- form-group// -->
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+          
+                <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                  <span class="sr-only">Error:</span>
+                  <span class="msg"></span>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> I agree to the
+                    <a href="#terms" data-toggle="modal" data-target=".terms-modal">Terms of Service</a></label>
+                </div>
+                <!-- checkbox .// -->
+              </div>
+              <!-- form-group// -->
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block log-submit"> Sign Up </button>
+              </div>
+              <!-- form-group// -->
+            </form>
+          </article>
+        </div>
+        <!-- card.// -->
+      </div>
+{{!--       <div class="col-lg-7 col-sm-12 herocontent"><h2>Pretty marketing copy will go in here</h2><p>Blah blah blah</p></div> --}}
+    </div>
+  </div>
+</div>
+
+<div class="modal fade faq-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>FAQ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is PTSDNet?
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
       </div>
     </div>
   </div>
-   <script type="text/javascript" src="../js/signup.js"></script>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          What information do you store from me?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Can I get a diagnosis on this site?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade privacy-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Privacy Policy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Personal information collection</h3>
+                    <p>PTSDNet may collect and use the following kinds of personal information: [information about your use
+                        of this website;] [information that you provide using for the purpose of registering with the website;]
+                        [information about transactions carried out over this website;] [information that you provide for
+                        the purpose of subscribing to the website services; and] [any other information that you send to
+                        PTSDNet.]</p>
+
+                    <h3>Using personal information</h3>
+
+                    <p>PTSDNet may use your personal information to: [administer this website;] [personalize the website for
+                        you;] [enable your access to and use of the website services;] [publish information about you on
+                        the website;] [send to you products that you purchase;] [supply to you services that you purchase;]
+                        [send to you statements and invoices;] [collect payments from you; and] [send you marketing communications.]</p>
+
+                    <p>Where PTSDNet discloses your personal information to its agents or sub-contractors for these purposes,
+                        the agent or sub-contractor in question will be obligated to use that personal information in accordance
+                        with the terms of this privacy statement. </p>
+
+                    <p>In addition to the disclosures reasonably necessary for the purposes identified elsewhere above, [NAME]
+                        may disclose your personal information to the extent that it is required to do so by law, in connection
+                        with any legal proceedings or prospective legal proceedings, and in order to establish, exercise
+                        or defend its legal rights.</p>
+
+                    <h3>Securing your data</h3>
+
+                    <p>PTSDNet will take reasonable technical and organisational precautions to prevent the loss, misuse or
+                        alteration of your personal information.</p>
+
+                    <p>PTSDNet will store all the personal information you provide [on its secure servers].</p>
+
+                    <p>[Information relating to electronic transactions entered into via this website will be protected by encryption
+                        technology.]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade terms-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Terms of Service</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Introduction</h3>
+                    <p>
+                        These terms and conditions govern your use of this website; by using this website, you accept these terms and conditions
+                        in full. If you disagree with these terms and conditions or any part of these terms and conditions,
+                        you must not use this website.</p>
+
+                    <p>[You must be at least [18] years of age to use this website. By using this website [and by agreeing to
+                        these terms and conditions] you warrant and represent that you are at least [18] years of age.]</p>
+
+                    <p>[This website uses cookies. By using this website and agreeing to these terms and conditions, you consent
+                        to our [NAME]'s use of cookies in accordance with the terms of PTSDNet's [privacy policy / cookies
+                        policy].]</p>
+
+                    <h3>License to use website</h3>
+                    <p>
+                        Unless otherwise stated, PTSDNet and/or its licensors own the intellectual property rights in the website and material on
+                        the website. Subject to the license below, all these intellectual property rights are reserved.</p>
+
+                    <p>You may view, download for caching purposes only, and print pages [or [OTHER CONTENT]] from the website
+                        for your own personal use, subject to the restrictions set out below and elsewhere in these terms
+                        and conditions.</p>
+
+                    <p>You must not:
+                        <br> republish material from this website (including republication on another website); sell, rent or
+                        sub-license material from the website; show any material from the website in public; reproduce, duplicate,
+                        copy or otherwise exploit material on this website for a commercial purpose;] [edit or otherwise
+                        modify any material on the website; or] [redistribute material from this website [except for content
+                        specifically and expressly made available for redistribution].]</p>
+                    <p>
+                        [Where content is specifically made available for redistribution, it may only be redistributed [within your organisation].]</p>
+
+                    <h3>Acceptable use</h3>
+                    <p>
+                        You must not use this website in any way that causes, or may cause, damage to the website or impairment of the availability
+                        or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful,
+                        or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity. You must
+                        not use this website to copy, store, host, transmit, send, use, publish or distribute any material
+                        which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger,
+                        rootkit or other malicious computer software. You must not conduct any systematic or automated data
+                        collection activities (including without limitation scraping, data mining, data extraction and data
+                        harvesting) on or in relation to this website without PTSDNet's express written consent.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/signup.js"></script>

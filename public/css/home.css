@@ -1,6 +1,5 @@
 #main.col-lg-12 {
-    background-image: url("../images/bkgd-home.jpg");
-    background-size: cover;
+    
 
 }
 body,
@@ -10,7 +9,11 @@ height: 100%;
 }
 
 body {
-font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+background-image: url("../images/bkgd-home.jpg");
+    background-size: cover;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8em;
 }
 
 hr {
@@ -29,6 +32,7 @@ color: rgba(255,255,255,1);
 -moz-transition: all 0.2s;
 transition: all 0.2s;
 }
+.checkbox a { color: rgba(54,70,80,1); text-decoration: underline; }
 
 a:hover {
 color: rgba(196,155,116,1);
@@ -100,6 +104,7 @@ text-transform: uppercase;
 color: rgba(255, 255, 255, 1);
 font-size: 2.4em;
 font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+margin-bottom: 0;
 }
 
 #mainNav .navbar-brand img { 
@@ -175,6 +180,12 @@ color: rgba(196,155,116,1);
 color: rgba(196,155,116,1);
 }
 }
+
+.forms {
+    padding-top: 13rem;
+padding-bottom: calc(13rem - 56px);
+}
+.herocontent { color: #fff; }
 
 header.masthead {
 padding-top: 10rem;
@@ -307,14 +318,23 @@ padding: 1rem 2rem;
 margin: 10px;
 }
 
+.btn-outline-primary { color: rgba(196,155,116,1);}
+.btn-outline-primary:hover { background-color: transparent; color: rgba(54,70,80,1); }
+
 .btn-primary {
 background-color: rgba(196,155,116,0);
 border: 1px solid rgba(196,155,116,1);
-
+color: rgba(255,255,255,1)!important;
 }
 
+.btn-primary.log-submit {
+    background-color: rgba(196,155,116,0);
+    border: 1px solid rgba(196,155,116,1);
+    color: rgba(196,155,116,1)!important;
+    }
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-color: #fff;
+color: #fff!important;
 background-color: rgba(196,155,116,1) !important;
 border: 1px solid rgba(196,155,116,1);
 

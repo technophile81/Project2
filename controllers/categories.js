@@ -27,7 +27,10 @@ function getCategoryAndThreads(catId, userId, threadLimit) {
                 include: [
                     { model: db.User },
                     { model: db.Category },
-                    { model: db.Post },
+                    {
+                      model: db.Post,
+                      attributes: [],
+                    },
                     {
                         model: db.Subscription,
                         where: { userId: userId },

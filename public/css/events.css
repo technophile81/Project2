@@ -479,3 +479,31 @@
     background-image: url(/images/alex-martinez-43505-unsplash);
 
 }
+
+
+.branch-img{
+    height:80px;
+    width: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+}
+
+.army { 
+    background-image: url(/images/ranks/army-seal.png);
+}
+.airforce { 
+    background-image: url(/images/ranks/air-force-seal.png);
+}
+.marines { 
+    background-image: url(/images/ranks/marine-seal.png);
+}
+.navy { 
+    background-image: url(/images/ranks/navy-seal.png);
+
+}
+.coastguard { 
+    background-image: url(/images/ranks/coast-guard-seal.png);
+
+}

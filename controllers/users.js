@@ -1,4 +1,5 @@
 var express = require("express");
+var sequelize = require('sequelize');
 
 var router = express.Router();
 
@@ -6,19 +7,6 @@ var router = express.Router();
 var db = require("../models");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-// router.post("/views//profileform", isAuthenticated, function(req, res) {
-
-//     let newUser={
-//         name: req.body.name,
-//         branch: req.body.branch,
-//         rank: req.body.rank,
-//         mos: req.body.mos,
-//         deployments: req.body.deployments,
-//         bio: req.body.bio
-//     }
-
-//     db.User.create(req.user.User) 
-// });
 
 router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 
@@ -44,10 +32,31 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
             order: [
                 ['createdAt', 'DESC']
             ],
+            include: [
+                { model: db.User },
+            ],
             limit: 5,
         }).then(function (postdata) {
             userdata.getFolloweds().then(function (followeddata) {
-                userdata.getSubscriptions().then(function (subbeddata) {
+                userdata.getSubscriptions({
+                    attributes: {
+                        include: [
+                            [sequelize.fn('COUNT', sequelize.col('Posts.postId')), 'postCount'],
+                        ],
+                    },
+                    group: "Thread.threadId",
+                    include: [
+                        { model: db.User },
+                        {
+                            model: db.Post,
+                            attributes: [],
+                        },
+                    ],
+                }).then(function (subbeddata) {
+                    for (let subbed of subbeddata) {
+                        subbed.Subscriptions = true;
+                    }
+
                     var hbsObject = {
                         myProfile: (req.params.user_id == req.user.userId),
                         profile: userdata,
@@ -63,28 +72,29 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 });
 
 router.get("/editprofile", isAuthenticated, function (req, res) {
-   
     var hbsObject = {};
+    console.log(hbsObject);
 
     res.renderWithContext("editprofile", hbsObject);
 });
 
-
-
 router.post("/editprofile", isAuthenticated, function (req, res) {
-    var changes = {
-        name: req.body.name,
-        rank: req.body.rank,
-        branch: req.body.branch,
-        bio: req.body.bio,
-        deployment: req.body.deployment
-    };
- 
-    db.User.update(changes, {
-        where: { userId: req.user.userId },
-    }).then(function () {
-        res.redirect("/viewuser/" + req.user.userId);
-    });
+  var changes = {
+    name: req.body.name,
+    avatar: req.body.avatar,
+    coverImg: req.body.coverImg,
+    rank: req.body.rank,
+    branch: req.body.branch,
+    deployment: req.body.deployment,
+    mos: req.body.mos,
+    bio: req.body.bio,
+  };
+
+  db.User.update(changes, {
+    where: { userId: req.user.userId },
+  }).then(function () {
+    res.redirect("/viewuser/" + req.user.userId);
+  });
 });
 
 module.exports = router;

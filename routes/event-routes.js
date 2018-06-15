@@ -10,14 +10,14 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
 
 
-  app.get("/event/edit/:id", function (req, res) {
+  app.get("/event/edit/:id", isAuthenticated, function (req, res) {
     db.CalEvent.findOne({
         where: {
             id: req.params.id
         },
         include: [{model: db.User, as: "User_Id"}, {model: db.User, as: "EventCreator"},{model: db.EventComments, as:"EventComment_ID", include:[{model: db.User, as: "User_Id"}]}]
      }).then(function(dbCalEvent){
-        res.render("eventedit", dbCalEvent);
+        res.renderWithContext("eventedit", dbCalEvent);
      });
     
   });
@@ -30,7 +30,6 @@ module.exports = function (app) {
       ).then(function(CalEvents){
         console.log("in the router, getting all events, before rendering the view " );
         let result = {
-            user: req.user.userId,
             events: CalEvents
         };
         
@@ -44,7 +43,7 @@ module.exports = function (app) {
 
         let jsonString = JSON.stringify(result);
       
-        res.render("all-events", result);
+        res.renderWithContext("all-events", result);
     }).catch(function(error){
       console.log(error)
   });
@@ -72,7 +71,6 @@ module.exports = function (app) {
 
         dbCalEvents[0].getEventComment_ID({include:[{model: db.User, as: "User_Id"}]}).then(function(dbcomments){
           let result = {
-                  user: req.user.userId,
                   event: dbCalEvents,
                   comments: dbcomments
                   };
@@ -81,7 +79,7 @@ module.exports = function (app) {
                   let jsonString = JSON.stringify(result);
                   console.log("There should be comments: "+jsonString)
             
-            res.render("one-event", result);
+            res.renderWithContext("one-event", result);
         }).catch(function(error){
           console.log(error)
       });
@@ -169,7 +167,7 @@ module.exports = function (app) {
                   
                     //       let jsonString = JSON.stringify(result);
                         
-                    //       res.render("all-events", result);
+                    //       res.renderWithContext("all-events", result);
                     //   });
 
                     res.redirect("/events/"+ dbCalEvent.id); 
@@ -224,13 +222,12 @@ module.exports = function (app) {
             if(CalEvents.length >0 ){
             console.log("in the router, getting all events, before rendering the view " );
             let result = {
-                user: req.user.userId,
                 events: CalEvents,
                 category: req.params.category
             };
             let jsonString = JSON.stringify(result);
             console.log(jsonString)
-            res.render("all-events", result);
+            res.renderWithContext("all-events", result);
         }else{
             res.redirect("/events"); 
 
@@ -260,7 +257,7 @@ module.exports = function (app) {
                 };
                 let jsonString = JSON.stringify(result);
                 console.log(jsonString)
-                res.render("partials/sidebar/sidebar", result);
+                res.renderWithContext("partials/sidebar/sidebar", result);
             // }else{
             //     let noResult = {noevents: "You aren't attending any events yet."}
             //     res.render("partials/sidebar/sidebar", noResult);

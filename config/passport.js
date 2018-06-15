@@ -16,9 +16,6 @@ passport.use(new LocalStrategy(
         credentialSource: 'local',
         credentialName: email
       },
-      include: [
-        { model: db.User },
-      ]
     }).then(function(dbCred) {
       // If there's no user with the given email
       if (!dbCred) {
