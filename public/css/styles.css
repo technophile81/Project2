@@ -48,6 +48,14 @@ a:hover {
   min-height: 100vh;
 }
 
+.btn:hover, .btn:active, .btn:focus { text-decoration: none!important;}
+
+#assessment-content .btn {
+  width: 100%;
+}
+
+
+
 /* Profile Styles
 ******************************************************************/
 
@@ -501,4 +509,134 @@ nav{
   #sidebarCollapse span {
       display: none;
   }
+}
+
+
+/* Button style of card header */
+
+#headerbutton{
+  border: 1px solid #888 !important;
+  border-radius: 5px;
+  box-shadow: 3px 3px #999;
+}
+
+#headerbutton:hover {background-color: #666 !important;}
+
+
+
+#headerbutton:active {
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+/* Button style inside of card body*/
+
+#yes, #no, #resetbutton, #assessmentstart, #submit-text, #imgSub, #submit-pasted-text{
+  
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #364650;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+  margin-top: 10px;
+}
+
+#no{
+  background-color: rgb(80, 117, 148);
+}
+
+#resetbutton{
+  background-color: rgb(12, 184, 236);
+}
+
+#yes:hover {background-color: black}
+#no:hover {background-color: black}
+#resetbutton:hover {background-color: black}
+#assessmentstart:hover {background-color: black}
+#submit-text:hover {background-color: black}
+#imgSub:hover {background-color: black}
+#submit-pasted-text:hover {background-color: black}
+
+
+#yes:active {
+background-color: #1c0355;
+box-shadow: 0 2px #666;
+transform: translateY(4px);
+}
+
+#no:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#resetbutton:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#assessmentstart:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#submit-text:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#imgSub:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+#submit-pasted-text:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+
+
+#fullresult {
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #364650;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px #999;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  
+}
+
+#fullresult:hover {background-color: black}
+
+#fullresult:active {
+  background-color: #1c0355;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+
+.center{
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
 }

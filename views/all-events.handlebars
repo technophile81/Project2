@@ -1,0 +1,229 @@
+{{log "you made it to the all events page!"}}
+{{log "all events json" user
+events
+}}
+<div class="d-flex flex-column w-100">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Forum</a></li>
+    <li class="breadcrumb-item active" aria-current="page"> All Events</li>
+  </ol>
+</nav>
+
+<div id="multiple-events-top">
+    <button type="button" id="add-new-event" style="border-radius:7px" data-show-value="false"> + Add New Event</button><span> </span>
+    <div class="form-group" style="display: inline-block">
+   <div class="btn-group categorySort" role="group" aria-label="categories">
+  <button type="button" class="btn btn-secondary" value="support">Support Groups</button>
+  <button type="button" class="btn btn-secondary"value="meetup">Meetups</button>
+  <button type="button" class="btn btn-secondary"value="exercise">Exercise/Sports</button>
+</div>
+  </div>
+  <form class="form-inline my-2 my-lg-0" style="display: inline-block">
+      <input class="form-control mr-sm-2 zip-search-content" type="number" placeholder="Enter Zip Code" aria-label="Search" required>
+      <button class="zip-search-btn btn btn-outline-success my-2 my-sm-0 " type="submit"><i class="fas fa-search"></i></button>
+    </form>
+</div>
+
+<div id="new-event-form">
+    <form action="/events" method="post">
+        <!--Event NAme-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Name</label>
+            <input type="text" class="form-control" id="event-name" placeholder="Coffee and Talky" name="eventName"required>
+        </div>
+        <!--Event Category-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example Category</label>
+            <select class="form-control" id="event-category" name="category"required>
+                <option value="support">Support Groups</option>
+                <option value="meetup">Meetups</option>
+                <option value="exercise">Exercise/Sports</option>
+            </select>
+        </div>
+        <!--Event Date-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Date</label>
+            <input type="date" class="form-control" id="event-date" name="eventDate" required>
+        </div>
+        <!--Event Start Time-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Start Time</label>
+            <input type="time" class="form-control" id="event-time-start" name="startTime" required>
+        </div>
+        <!--Event End Time-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event End Time</label>
+            <input type="time" class="form-control" id="event-time-end" name="endTime" required>
+        </div>
+        <!--Event Timezone-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Event Timezone</label>
+            <select class="form-control" id="event-timezone" name="timezone" required>
+                <option>EST</option>
+                <option>CST</option>
+                <option>MST</option>
+                <option>PST</option>
+                <option>HST</option>
+                <option>AKST</option>
+
+            </select>
+        </div>
+        <!--Event Address 1-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Address (line 1)</label>
+            <input type="text" class="form-control" id="event-address1"  placeholder="9000 Cactus Dr." name="address1" required>
+        </div>
+        <!--Event Address 2-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Address (line 2)</label>
+            <input type="text" class="form-control" id="event-address2" placeholder="Apartment 901" name="address2">
+        </div>
+        <!--Event City-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event City</label>
+            <input type="text" class="form-control" id="event-city" placeholder="Tulsa" name="city" required>
+        </div>
+        <!--Event State-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Event State</label>
+            <select class="form-control" id="event-state" name="state" required>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachussetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+
+            </select>
+        </div>
+        <!--Event Zip-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Zip</label>
+            <input type="text" class="form-control" id="event-zip" placeholder="88000" name="postalCode" required>
+        </div>
+
+        <!--Event Description-->
+        <div class="form-group event-description">
+            <label for="exampleFormControlInput1">Event Description</label>
+            <input type="text" class="form-control" id="event-description" placeholder="Describe your event here. What are your plans?"
+               name="description" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit-event">Submit</button>
+
+    </form>
+</div>
+
+<div id="all-events">
+    {{#each events}}
+
+    <div class="card mb-3 event-card">
+
+        <div class="card-body">
+            <div class="card-title event-topper" style="background-image: url({{imageUrl}}); 
+                    background-size:cover; background-position: center">
+                <div class="event-topper-text">
+                    <h2 class="eventName">{{eventName}}</h2>
+                    <p>
+                        <span class="eventDate">{{eventDate}}</span> |
+                        <span class="startTime">{{startTime}}</span> -
+                        <span class="endTime">{{endTime}}</span>
+                        <span class="timezone">{{timezone}}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="card-text">
+                {{#each EventCreator}}
+                <small class="text-muted category">Posted by: <a href="/viewuser/{{userId}}">{{name}}</a> <span class="post-rank mr-2"><div class="rank-img {{branch}}-{{rank}}"></div></span></small>
+                {{/each}}
+           <small class="text-muted category">| Category: <span id="{{category}}-cat"></span></small>
+           <h4>Description:</h4>
+            <p class="description">{{description}}</p>
+            <h4>Location:</h4>
+           <p>
+            <span class="address1">{{address1}}</span>
+            {{#if address2}}
+            | <span class="address2">{{address2}}</span>
+            {{/if}}
+           
+                | <span class="city">{{city}}</span>,
+                <span class="state">{{state}}</span>
+                <span class="postalCode">{{postalCode}}</span>
+            </p>
+             <button class="viewEvent icon-btn" type="button" data-event-id={{id}}><i class="far fa-eye"></i></button>
+            <button class="addComment icon-btn" type="button" data-event-id={{id}}><i class="fas fa-reply"></i></button>
+
+            {{#if (isUser EventCreator.userId user)}}
+            <button class="editEvent icon-btn" type="button" data-event-id={{id}}><i class="fas fa-edit"></i></button>
+            <button class="deleteEvent icon-btn" type="button" data-event-id={{id}}><i class="far fa-trash-alt"></i></button>
+            {{/if}}
+{{#if User_Id}}
+{{#each User_Id}}
+{{#if (isAttending UserAttendEvents.Event_ID ../id)}}
+        {{log "the attending function maybe worked"}}  
+      <button class="unattend" type="button" data-event-id={{../id}}>Don't Attend</button>
+
+        {{/if}}  
+        {{/each}}
+        {{else}}
+    <button class="attend" type="button" data-event-id={{id}}>Attend</button>
+
+        {{log "display attend button"}}
+        {{/if}}
+            </div>
+        </div>
+    </div>
+    
+    {{/each}}
+
+
+</div>
+
+</div>
+      <script type="text/javascript" src="/js/event.js" ></script>
+

@@ -1,5 +1,5 @@
 <div class="hotline">
-    <p>If you need help now, call 1-800-273-8255.</p>
+    <h1 style="text-align:center;">If you need help now, call 1-800-273-8255.</h1>
 </div>
 <div class="container">
     
@@ -21,7 +21,9 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" id="headerbutton" type="button" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="false" aria-controls="collapseOne">
-                                    <h3>Required: Assessment Questionnaire</h3>
+                                {{!-- <button class="btn btn-info" id="headerbutton" type="button" data-toggle="collapse" data-target="#collapseOne1"
+                                   > --}}
+                                    <h3 style="color:black">Questionnaire</h3>
                                 </button>
                             </h5>
                         </div>
@@ -34,15 +36,17 @@
 
                         <!-- Change class from "collapse show step-one to collapse"     -->
                         <div id="collapseOne" class="collapse step-one" aria-labelledby="headingOne" data-parent="#accordion">
+                        {{!-- <div id="collapseOne1" class="collapse"> --}}
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-12" id="assessment-div">
-                                        <p id="assessmentsq">Assessment</p>
-
+                                        <p id="assessmentsq"></p>
                                         <button id="assessmentstart">Start</button>
                                         <button id="yes">Yes</button>
                                         <button id="no">No</button>
                                         <button id="resetbutton">Start Again</button>
+                                        
+
 
 
                                     </div>
@@ -56,7 +60,7 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" id="headerbutton" type="button" data-toggle="collapse" data-target="#collapseTwo"
                                     aria-expanded="false" aria-controls="collapseTwo">
-                                    <h3>Required: Behavior Description</h3>
+                                    <h3 style="color:black">Behavior</h3>
                                 </button>
                             </h5>
                         </div>
@@ -80,7 +84,7 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" id="headerbutton" type="button" data-toggle="collapse" data-target="#collapseThree"
                                     aria-expanded="false" aria-controls="collapseThree">
-                                    <h3>Optional: Upload Images</h3>
+                                    <h3 style="color:black">Images</h3>
                                 </button>
                             </h5>
                         </div>
@@ -89,6 +93,7 @@
                                 <div class="row">
                                     <div class="col-sm-12" id="image-uploads-div">
                                         <input id="URLInput" type="text" placeholder="Copy and paste image URL here">
+                                        
                                         <input id="imgSub" type="submit" value="Submit">
                                     </div>
                                 </div>
@@ -100,7 +105,7 @@
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" id="headerbutton" type="button" data-toggle="collapse" data-target="#collapseFour"
                                     aria-expanded="false" aria-controls="collapseFour">
-                                    <h3>Optional: Text</h3>
+                                    <h3 style="color:black">Text</h3>
                                 </button>
                             </h5>
                         </div>
@@ -125,7 +130,7 @@
 
 
                 <div class="row">
-                    <div class="col-sm-12" id="results-button-div">
+                    <div class="col-sm-12 text-center" id="results-button-div">
                         <a href="#">
                             <!-- Disable -->
                             <button id="fullresult">
@@ -133,7 +138,7 @@
                             </button>
                         </a>
                         <p>
-                            <small>*This button will not be activated until you have completed all required steps.</small>
+                            <small>*This button will not be activated until you have completed Questionnaire and Behavior Analysis.</small>
                         </p>
                     </div>
                 </div>
@@ -150,19 +155,19 @@
 
                 </div>
                 <div>
-                    <div class="result-graph">
-                        <p class="center">Questionnaire Results</p>
+                    <div class="result-graph" id="graph1">
+                        <p class="center" >Questionnaire Results</p>
                         <canvas id="assessment-result-graph" class="graph"></canvas>
                     </div>
-                    <div class="result-graph">
+                    <div class="result-graph" id="graph2">
                         <p class="center">Description Results</p>
                         <canvas id="description-result-graph" class="graph"></canvas>
                     </div>
-                    <div class="result-graph">
+                    <div class="result-graph" id="graph3">
                         <p class="center">Image Analysis Results</p>
                         <canvas id="image-analysis-graph" class="graph"></canvas>
                     </div>
-                    <div class="result-graph">
+                    <div class="result-graph" id="graph4">
                         <p class="center">Text Results</p>
                         <canvas id="text-analysis-graph" class="graph"></canvas>
                     </div>
@@ -176,7 +181,6 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
