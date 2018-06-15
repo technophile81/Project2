@@ -324,6 +324,7 @@ margin: 10px;
 .btn-primary {
 background-color: rgba(196,155,116,0);
 border: 1px solid rgba(196,155,116,1);
+color: rgba(255,255,255,1)!important;
 }
 
 .btn-primary.log-submit {
