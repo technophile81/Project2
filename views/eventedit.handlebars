@@ -10,16 +10,17 @@
 {{"in event edit !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"}}
 
 <div id="new-event-form">
-    <form>
+    <form action="/api/events/{{id}}" method="post">
+       
         <!--Event NAme-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Name</label>
-            <input type="text" class="form-control" id="event-name" value="" required>
+            <input type="text" class="form-control" id="event-name" value="{{eventName}}" required>
         </div>
         <!--Event Category-->
         <div class="form-group">
             <label for="exampleFormControlSelect1">Example Category</label>
-            <select class="form-control" id="event-category" value=""required>
+            <select class="form-control" id="event-category" value="{{category}}"required>
                 <option value="support">Support Groups</option>
                 <option value="meetup">Meetups</option>
                 <option value="exercise">Exercise/Sports</option>
@@ -28,22 +29,22 @@
         <!--Event Date-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Date</label>
-            <input type="date" class="form-control" id="event-date" value="" required>
+            <input type="date" class="form-control" id="event-date" value="{{eventDate}}" required>
         </div>
         <!--Event Start Time-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Start Time</label>
-            <input type="time" class="form-control" id="event-time-start" value="" required>
+            <input type="time" class="form-control" id="event-time-start" value="{{startTime}}" required>
         </div>
         <!--Event End Time-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event End Time</label>
-            <input type="time" class="form-control" id="event-time-end"value="" required>
+            <input type="time" class="form-control" id="event-time-end"value="{{endTime}}" required>
         </div>
         <!--Event Timezone-->
         <div class="form-group">
             <label for="exampleFormControlSelect1">Event Timezone</label>
-            <select class="form-control" id="event-timezone"value="" required>
+            <select class="form-control" id="event-timezone"value="{{timezone}}" required>
                 <option>EST</option>
                 <option>CST</option>
                 <option>MST</option>
@@ -56,22 +57,22 @@
         <!--Event Address 1-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Address (line 1)</label>
-            <input type="text" class="form-control" id="event-address1"  value=""required>
+            <input type="text" class="form-control" id="event-address1"  value="{{address1}}"required>
         </div>
         <!--Event Address 2-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Address (line 2)</label>
-            <input type="text" class="form-control" id="event-address2"  value="" >
+            <input type="text" class="form-control" id="event-address2"  value="{{address2}}" >
         </div>
         <!--Event City-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event City</label>
-            <input type="text" class="form-control" id="event-city" value="" required>
+            <input type="text" class="form-control" id="event-city" value="{{city}}" required>
         </div>
         <!--Event State-->
         <div class="form-group">
             <label for="exampleFormControlSelect1">Event State</label>
-            <select class="form-control" id="event-state" value=""required>
+            <select class="form-control" id="event-state" value="{{state}}"required>
                 <option>Alabama</option>
                 <option>Alaska</option>
                 <option>Arizona</option>
@@ -128,13 +129,13 @@
         <!--Event Zip-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Zip</label>
-            <input type="text" class="form-control" id="event-zip" value="" required>
+            <input type="text" class="form-control" id="event-zip" value="{{postalCode}}" required>
         </div>
 
         <!--Event Description-->
         <div class="form-group event-description">
             <label for="exampleFormControlInput1">Event Description</label>
-            <input type="text" class="form-control" id="event-description" value=""
+            <input type="text" class="form-control" id="event-description" value="{{description}}"
                 required>
         </div>
 
