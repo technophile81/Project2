@@ -2,8 +2,12 @@
 
     <div class=" d-flex flex-row mr-auto align-self-center" data-threadId="{{this.threadId}}">
         <div class="avatar mr-2">
-            <a href="https://placeholder.com">
-                <img src="http://via.placeholder.com/50x50">
+            <a href="/viewuser/{{this.User.userId}}">
+                {{#if this.User.avatar}}
+                <img src="{{this.User.avatar}}">
+                {{else}}
+                <img src="/images/user-avatar.png">
+                {{/if}}
             </a>
         </div>
         <div class="d-flex flex-column align-self-center">

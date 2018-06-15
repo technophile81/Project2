@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         name: {
             type: DataTypes.STRING,
-            /*allowNull: false,*/
+            allowNull: false,
             validate: {
                 len: [1, 32]
             }
@@ -23,37 +23,28 @@ module.exports = function (sequelize, DataTypes) {
         rank: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [1, 16]
-            }
         },
         branch: {
             type: DataTypes.STRING,
             allowNull: true,
-            validate: {
-                len: [1, 16]
-            }
         },
         deployment: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len: [1, 56]
+                len: [0, 56]
             }
         },
         mos: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
-                len: [1, 26]
+                len: [0, 26]
             }
         },
         bio: {
             type: DataTypes.TEXT,
             allowNull: true,
-            validate: {
-                len: [1, 600]
-            }
         }
     });
     User.associate = function (models) {

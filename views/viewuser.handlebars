@@ -1,13 +1,21 @@
 <link rel="stylesheet" href="../css/profilepage.css">
 <div id="profileview">
-    <div class="cover" style="background-image: url(https://r.hswstatic.com/w_907/gif/tesla-cat.jpg);">
+    {{#if profile.coverImg}}
+    <div class="cover" style="background-image: url({{profile.coverImg}});">
+    {{else}}
+    <div class="cover" style="background-image: url(/images/bkgd-home.jpg);">
+    {{/if}}
         <div class="p-branch">{{profile.branch}}</div>
         <div class="cover-bkgd"></div>
     </div>
 
     <div class="d-flex flex-row p-usermain">
         <div class="p-avatar">
+            {{#if profile.avatar}}
             <img src="{{profile.avatar}}" alt="{{profile.name}}" />
+            {{else}}
+            <img src="/images/user-avatar.png" alt="{{profile.name}}" />
+            {{/if}}
         </div>
         <div class="p-namegroup d-flex flex-column">
             <div class="p-namerank d-flex flex-row">

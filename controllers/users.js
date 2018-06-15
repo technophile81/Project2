@@ -1,4 +1,5 @@
 var express = require("express");
+var sequelize = require('sequelize');
 
 var router = express.Router();
 
@@ -31,10 +32,31 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
             order: [
                 ['createdAt', 'DESC']
             ],
+            include: [
+                { model: db.User },
+            ],
             limit: 5,
         }).then(function (postdata) {
             userdata.getFolloweds().then(function (followeddata) {
-                userdata.getSubscriptions().then(function (subbeddata) {
+                userdata.getSubscriptions({
+                    attributes: {
+                        include: [
+                            [sequelize.fn('COUNT', sequelize.col('Posts.postId')), 'postCount'],
+                        ],
+                    },
+                    group: "Thread.threadId",
+                    include: [
+                        { model: db.User },
+                        {
+                            model: db.Post,
+                            attributes: [ ],
+                        },
+                    ],
+                }).then(function (subbeddata) {
+                    for (let subbed of subbeddata) {
+                        subbed.Subscriptions = true;
+                    }
+
                     var hbsObject = {
                         myProfile: (req.params.user_id == req.user.userId),
                         profile: userdata,

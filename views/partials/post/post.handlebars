@@ -3,8 +3,12 @@
         <a name="post-{{this.postId}}"></a>
         <div class="userinfo mr-4">
             <div class="avatar">
-                <a href="https://placeholder.com">
-                    <img src="http://via.placeholder.com/100x100">
+                <a href="/viewuser/{{this.User.userId}}">
+                    {{#if this.User.avatar}}
+                    <img src="{{this.User.avatar}}">
+                    {{else}}
+                    <img src="/images/user-avatar.png">
+                    {{/if}}
                 </a>
             </div>
         </div>
