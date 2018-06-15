@@ -12,7 +12,7 @@ module.exports = function (app) {
 
   app.get("/", function (req, res) {
     if (req.user) {
-      res.redirect("/forum");
+      res.redirect("/viewuser/" + req.user.userId);
     } else {
       res.render("home", {});
     }
