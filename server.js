@@ -84,10 +84,14 @@ app.set("view engine", "handlebars");
 app.use(function (req, res, next) {
   res.renderWithContext = function(template, context) {
     if (req.user) {
-      db.Category.findAll({}).then(function (data) {
-        context.user = req.user.User;
-        context.categories = data;
-        res.render(template, context);
+      db.User.findOne({
+        where: { userId: req.user.userId },
+      }).then(function (userdata) {
+        db.Category.findAll({}).then(function (catdata) {
+          context.user = userdata;
+          context.categories = catdata;
+          res.render(template, context);
+        });
       });
     } else {
       res.render(template, context);
