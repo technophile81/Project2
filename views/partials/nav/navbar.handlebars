@@ -18,11 +18,11 @@
     <div class="d-flex justify-content-end ml-auto align-items-stretch profile-window">
         {{#if user}}
         {{#if user.avatar}}
-        <a class="d-flex justify-content-end mr-2 align-self-center" href="/viewuser/{{user.userId}}">
+        <a class="d-flex justify-content-end mr-2 align-self-center nav-avatar" href="/viewuser/{{user.userId}}">
             <img class="d-flex align-self-center" src="{{user.avatar}}" alt="{{user.name}}" /> <div class="d-flex align-self-center">{{user.name}}</div>
         </a>
         {{else}}
-        <a class="d-flex justify-content-end mr-2 align-self-center" href="/viewuser/{{user.userId}}">
+        <a class="d-flex justify-content-end mr-2 align-self-cente nav-avatarr" href="/viewuser/{{user.userId}}">
         <img src="/images/user-avatar.png" alt="{{user.name}}" /><div class="d-flex align-self-center">{{user.name}}</div></a> {{/if}}
 
         {{/if}}
