@@ -1,8 +1,8 @@
 <nav class="d-flex justify-content-center" id="navbartop2">
     <div class="toggler d-flex align-self-center">
 
-        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn d-flex align-item-stretch">
-        <i class="fas fa-bars d-flex align-self-center"></i>
+        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn d-flex align-item-stretch h-100">
+            <i class="fas fa-bars d-flex align-self-center"></i>
         </button>
 
     </div>
@@ -15,17 +15,16 @@
 
     <div id="hits"></div>
 
-    <div class="d-flex justify-content-end ml-auto align-items-stretch profile-window">
-        {{#if user}}
-        {{#if user.avatar}}
+    <div class="d-flex justify-content-end ml-auto align-items-stretch h-100 profile-window">
+        {{#if user}} {{#if user.avatar}}
         <a class="d-flex justify-content-end mr-2 align-self-center nav-avatar" href="/viewuser/{{user.userId}}">
-            <img class="d-flex align-self-center" src="{{user.avatar}}" alt="{{user.name}}" /> <div class="d-flex align-self-center">{{user.name}}</div>
-        </a>
+            <img class="d-flex align-self-center" src="{{user.avatar}}" alt="{{user.name}}" /></a>
+            <a class="d-flex align-self-center" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
         {{else}}
-        <a class="d-flex justify-content-end mr-2 align-self-cente nav-avatarr" href="/viewuser/{{user.userId}}">
-        <img src="/images/user-avatar.png" alt="{{user.name}}" /><div class="d-flex align-self-center">{{user.name}}</div></a> {{/if}}
-
-        {{/if}}
+        <a class="d-flex justify-content-end mr-2 align-self-center nav-avatar" href="/viewuser/{{user.userId}}">
+            <img src="/images/user-avatar.png" alt="{{user.name}}" /></a>
+            <a class="d-flex align-self-center" href="/viewuser/{{user.userId}}"><div class="">{{user.name}}</div></a>
+        {{/if}} {{/if}}
         <a class="d-flex align-self-center" href="/logout">
             <i class="fas fa-sign-out-alt"></i>
         </a>

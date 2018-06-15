@@ -486,17 +486,16 @@ textarea {
     line-height: 1.2em;
 }
 
-/*  
+ 
    .profile-window img { 
      margin-left: 15px;
-     margin-right: 15px;  
     width: 44px; 
     height: 44px; 
     border-radius: 50%; 
-    border: 2px solid rgba(196,155,116,0.5); } */
+    border: 2px solid rgba(196,155,116,0.5); } 
 
-.profile-window .nav-avatar {
-    margin-top: -40px;
+/* .profile-window .nav-avatar {
+    
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -519,7 +518,7 @@ textarea {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
+} */
 
 .search-results .post-content {
     margin-bottom: 15px;
