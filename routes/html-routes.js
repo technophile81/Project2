@@ -27,9 +27,6 @@ module.exports = function (app) {
     res.render("signup");
   });
 
-  app.get("/profile", function (req, res) {
-    res.renderWithContext("profile", {});
-  })
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads index.html
