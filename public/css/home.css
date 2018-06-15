@@ -330,11 +330,11 @@ color: rgba(255,255,255,1)!important;
 .btn-primary.log-submit {
     background-color: rgba(196,155,116,0);
     border: 1px solid rgba(196,155,116,1);
-    color: rgba(196,155,116,1);
+    color: rgba(196,155,116,1)!important;
     }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-color: #fff;
+color: #fff!important;
 background-color: rgba(196,155,116,1) !important;
 border: 1px solid rgba(196,155,116,1);
 
