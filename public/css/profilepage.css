@@ -4,9 +4,11 @@
     height: 240px;
     background-size: cover;
     background-position: left center;
-    margin-top: -15px;
+    margin-top: -30px;
    /* margin-left: -15px;
     width: 103%;*/
+    margin-left: -15px;
+    margin-right: -15px;
     z-index: 1;
 }
 
