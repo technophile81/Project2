@@ -21,6 +21,11 @@ $(document).ready(function () {
       $("#yes").hide();
       $("#no").hide();
       $("#resetbutton").hide();
+      $("#graph1").hide();
+      $("#graph2").hide();
+      $("#graph3").hide();
+      $("#graph4").hide();
+
       
   
   
@@ -206,10 +211,11 @@ $(document).ready(function () {
               // no = 0;
               // array = [];
   
-                        
+              $("#graph1").show();          
               
               // Click button to restart assessment
               $("#resetbutton").show();
+
               
   
   
@@ -310,6 +316,7 @@ $(document).ready(function () {
                  overallResultArray.push(imageFinalAvg);
                  drawResultGraph(imageFinalAvg, "#image-analysis-graph", "image-analysis-graph");
                  console.log(emotionAvg);
+                 $("#graph3").show();
   
   
   
@@ -412,6 +419,7 @@ $(document).ready(function () {
           descriptionTextResultsArray.push(textAnalysisPercentageResult);
           console.log(keyWordsinEntry);
           textEmotionAnalysis(descriptionText);
+          $("#graph4").show();
       });
   }
   
@@ -455,6 +463,7 @@ $(document).ready(function () {
           console.log(descriptionTextResultsArray);
           //steps analysis on to the Watson API before final results are calculated based on results from both APIs
           descriptionTextResultFxn();
+          $("#graph2").show();
   
       });
   
