@@ -11,13 +11,12 @@ var path = require("path");
 module.exports = function (app) {
 
   app.get("/", function (req, res) {
-    
     if (req.user) {
       res.redirect("/forum");
-    } else { res.redirect("/home"); }
+    } else {
+      res.render("home", {});
+    }
   });
-
- 
 
   app.get("/login", function (req, res) {
     res.render("login");
@@ -56,22 +55,4 @@ module.exports = function (app) {
   // app.get("/assesmentStuff", function(req.res) {
     // send back assesment.handlebars file to client
   // });
-
-
-
-  // var isAuthenticated = require("../config/middleware/isAuthenticated");
-
-  
-  // app.get("/profile", isAuthenticated, function (req, res) {
-  //   if (isAuthenticated) {
-  //     res.sendFile(path.join(__dirname, "../public/profile.html"))
-  //   }
-  //   else {
-  //     res.redirect("/signup");
-  //   }
-  // });
-
-
-
-
 };
