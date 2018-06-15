@@ -28,7 +28,7 @@
                     <i class="foo fas fa-user"> <span>Edit</span></i></a>
                 {{else}}
                 <div class="following">
-                    <button class="btn btn-secondary" id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
+                    <button class="btn btn-secondary followed" id="followed-button-{{profile.userId}}" data-userid="{{profile.userId}}">
                         {{#if profile.Followers}}
                         <i class="foo fas fa-user"> <span>Unfollow</span></i>{{else}}
                         <i class="foo far fa-user"> Follow</i>{{/if}}
@@ -79,12 +79,9 @@
             <div class="tab-pane fade" id="follow" role="tabpanel" aria-labelledby="follow-tab">
                 <ul>
                     {{#each followeds}}
-
                     <a href="/viewuser/{{this.userId}}">
                         <div class="p-avatar">
-
                             {{#if this.avatar}}
-
                             <img src="{{this.avatar}}" alt="{{this.name}}" /> {{else}}
                             <img src="/images/user-avatar.png" alt="{{this.name}}" /> {{/if}}
                         </div>
