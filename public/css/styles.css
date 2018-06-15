@@ -151,6 +151,7 @@ color: rgba(255,255,255,1);
 }
 
 #sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+  
   top: auto;
   bottom: 5px;
   right: 50%;
@@ -204,15 +205,16 @@ a[data-toggle="collapse"] {
 }
 
 a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
-  content: '\e258';
+  content: '\f054';
   display: block;
   position: absolute;
   right: 30px;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-size: 0.6em;
 }
 a[aria-expanded="true"]::before {
-  content: '\e259';
+  content: '\f078';
 }
 
 ul ul {
@@ -236,11 +238,12 @@ ul ul a {
 .assessment a::before,
 .profile a::before
  {
-  content: '\e258';
+  content: '\f054';
   display: block;
   position: absolute;
   right: 30px;
-  font-family: 'Glyphicons Halflings';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   font-size: 0.6em;
 }
 
