@@ -1,0 +1,144 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">All Events</a></li>
+    <li class="breadcrumb-item active" aria-current="page"> Edit Event</li>
+  </ol>
+</nav>
+
+<div id="new-event-form">
+    <form>
+        <!--Event NAme-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Name</label>
+            <input type="text" class="form-control" id="event-name" placeholder="Coffee and Talky" required>
+        </div>
+        <!--Event Category-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example Category</label>
+            <select class="form-control" id="event-category" required>
+                <option value="support">Support Groups</option>
+                <option value="meetup">Meetups</option>
+                <option value="exercise">Exercise/Sports</option>
+            </select>
+        </div>
+        <!--Event Date-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Date</label>
+            <input type="date" class="form-control" id="event-date" required>
+        </div>
+        <!--Event Start Time-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Start Time</label>
+            <input type="time" class="form-control" id="event-time-start" required>
+        </div>
+        <!--Event End Time-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event End Time</label>
+            <input type="time" class="form-control" id="event-time-end" required>
+        </div>
+        <!--Event Timezone-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Event Timezone</label>
+            <select class="form-control" id="event-timezone" required>
+                <option>EST</option>
+                <option>CST</option>
+                <option>MST</option>
+                <option>PST</option>
+                <option>HST</option>
+                <option>AKST</option>
+
+            </select>
+        </div>
+        <!--Event Address 1-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Address (line 1)</label>
+            <input type="text" class="form-control" id="event-address1" placeholder="9000 Cactus Dr." required>
+        </div>
+        <!--Event Address 2-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Address (line 2)</label>
+            <input type="text" class="form-control" id="event-address2" placeholder="Apartment 901" required>
+        </div>
+        <!--Event City-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event City</label>
+            <input type="text" class="form-control" id="event-city" placeholder="Tulsa" required>
+        </div>
+        <!--Event State-->
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Event State</label>
+            <select class="form-control" id="event-state" required>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arizona</option>
+                <option>Arkansas</option>
+                <option>California</option>
+                <option>Colorado</option>
+                <option>Connecticut</option>
+                <option>Delaware</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Hawaii</option>
+                <option>Idaho</option>
+                <option>Illinois</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Kansas</option>
+                <option>Kentucky</option>
+                <option>Louisiana</option>
+                <option>Maine</option>
+                <option>Maryland</option>
+                <option>Massachussetts</option>
+                <option>Michigan</option>
+                <option>Minnesota</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>New Jersey</option>
+                <option>New Mexico</option>
+                <option>New York</option>
+                <option>North Carolina</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>Oregon</option>
+                <option>Pennsylvania</option>
+                <option>Rhode Island</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Vermont</option>
+                <option>Virginia</option>
+                <option>Washington</option>
+                <option>West Virginia</option>
+                <option>Wisconsin</option>
+                <option>Wyoming</option>
+
+            </select>
+        </div>
+        <!--Event Zip-->
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Event Zip</label>
+            <input type="text" class="form-control" id="event-zip" placeholder="88000" required>
+        </div>
+
+        <!--Event Description-->
+        <div class="form-group event-description">
+            <label for="exampleFormControlInput1">Event Description</label>
+            <input type="text" class="form-control" id="event-description" placeholder="Describe your event here. What are your plans?"
+                required>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="update-event">Submit</button>
+
+    </form>
+</div>
+
+
+      <script type="text/javascript" src="/js/editEvent.js" ></script>
