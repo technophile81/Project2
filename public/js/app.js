@@ -419,7 +419,7 @@ $(document).ready(function () {
           descriptionTextResultsArray.push(textAnalysisPercentageResult);
           console.log(keyWordsinEntry);
           textEmotionAnalysis(descriptionText);
-          $("#graph4").show();
+          
       });
   }
   
@@ -527,8 +527,9 @@ $(document).ready(function () {
   
       analyzeDescriptionText(descriptionText);
       $("#pasted-text").val("Submitted.");
+      $("#graph4").show();
   
-  
+    
   });
   
           //------------------------------------results functions---------------------------------------------------------->

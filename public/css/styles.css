@@ -56,6 +56,7 @@ a:hover {
 
 
 
+
 /* Profile Styles
 ******************************************************************/
 
@@ -639,4 +640,13 @@ transform: translateY(4px);
 
 .bold {
   font-weight: bold;
+}
+
+#assessment-content p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#helpyou {
+  margin-top: 20px;
 }
