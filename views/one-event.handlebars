@@ -4,10 +4,10 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Forum</a>
+            <a href="/forum">Forum</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="#">All Events</a>
+            <a href="/events">All Events</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page"> {{#each event}}{{eventName}}{{/each}}</li>
     </ol>
@@ -15,7 +15,7 @@
 
 
 {{#each event}}
-<div class="card mb-3 event-card">
+<div class="card mb-3 event-card oneEvent">
 
     <div class="card-body">
         <div class="card-title event-topper" style="background-image: url({{imageUrl}}); 
@@ -71,6 +71,7 @@
 
 {{/each}}
 <div class="eventComments">
+    <div class="category-name">Comments</div>
 
     {{#each comments}}
 
