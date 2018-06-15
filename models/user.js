@@ -73,6 +73,20 @@ module.exports = function (sequelize, DataTypes) {
         User.hasMany(models.Follower, {
             foreignKey: "followedId",
         });
+        User.belongsToMany(models.CalEvent, {
+            as: "OwnedEvent", 
+            through: "Event_Creators", 
+            foreignKey:"EventCreator"});
+        //relationship with users to track event attendance
+        User.belongsToMany(models.CalEvent, {
+            as: "Event_ID", 
+            through:"UserAttendEvents", 
+            foreignKey: "User_Id"});
+        //relationship with event comments
+        User.belongsToMany(models.EventComments, {
+            as: "EventComment_ID", 
+            through:"UserEventComments",  
+            foreignKey: "User_Id"});
     };
 
     return User;

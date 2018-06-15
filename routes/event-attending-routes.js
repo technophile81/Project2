@@ -10,6 +10,8 @@ module.exports = function (app) {
 
     //////////-----------Attend Event Subscriptions
     app.post("/api/eventsattending/:id", isAuthenticated, function(req, res){
+        
+        console.log(req.user.userId)
             db.User.findById(req.user.userId).then(function(assignedUser){
                 console.log("user object? :" + assignedUser);
                 //through may need to be the name of the through table instead
