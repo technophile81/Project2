@@ -2,7 +2,7 @@
 {{log "all events json" user
 events
 }}
-
+<div class="d-flex flex-column w-100">
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="#">Forum</a></li>
@@ -178,8 +178,8 @@ events
                 </div>
             </div>
             <div class="card-text">
-                {{#each User_Id}}
-                <small class="text-muted category">Posted by: {{name}} <span class="post-rank mr-2"><div class="rank-img {{branch}}-{{rank}}"></div></span></small>
+                {{#each EventCreator}}
+                <small class="text-muted category">Posted by: <a href="/viewuser/{{userId}}">{{name}}</a> <span class="post-rank mr-2"><div class="rank-img {{branch}}-{{rank}}"></div></span></small>
                 {{/each}}
            <small class="text-muted category">| Category: <span id="{{category}}-cat"></span></small>
            <h4>Description:</h4>
@@ -221,6 +221,8 @@ events
     
     {{/each}}
 
+
+</div>
 
 </div>
       <script type="text/javascript" src="/js/event.js" ></script>
