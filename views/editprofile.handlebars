@@ -1,70 +1,95 @@
 <form method="POST">
-        <div class="form-group">
-            <label for="user_name">Username</label>
-            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Username" value="{{user.name}}">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Branch</label>
-            <select class="form-control" name="branch" id="branch" value="{{user.branch}}">
-                <option value="unselected">Unselected</option>
-                <option value="army">Army</option>
-                <option value="navy">Navy</option>
-                <option value="airforce">Air Force</option>
-                <option value="marines">Marines</option>
-                <option value="coastguard">Coast Guard</option>
-                </select>
-                </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Rank</label>
-            <select class="form-control" name="rank" id="rank" value="{{user.rank}}">
-                <option value="unselected">Unselected</option>
-                <option value="E-1">E-1</option>
-                <option value="E-2">E-2</option>
-                <option value="E-3">E-3</option>
-                <option value="E-4">E-4</option>
-                <option value="E-5">E-5</option>
-                <option value="E-6">E-6</option>
-                <option value="E-7">E-7</option>
-                <option value="E-8">E-8</option>
-                <option value="E-9">E-9</option>
-                <option value="WO1">WO1</option>
-                <option value="CW2">CW2</option>
-                <option value="CW3">CW3</option>
-                <option value="CW4">CW4</option>
-                <option value="CW5">CW5</option>
-                <option value="O-1">O-1</option>
-                <option value="O-2">O-2</option>
-                <option value="O-3">O-3</option>
-                <option value="O-4">O-4</option>
-                <option value="O-5">O-5</option>
-                <option value="O-6">O-6</option>
-                <option value="O-7">O-7</option>
-                <option value="O-8">O-8</option>
-                <option value="O-9">O-9</option>
-                <option value="O-10">O-10</option>
-                </select></div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">MOS</label>
-            <input type="text" class="form-control" name="mos" id="mos" placeholder="MOS" value="{{user.mos}}">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Deployments</label>
-            <input type="text" class="form-control" name="deployments" id="deployments" placeholder="Deployments" value="{{user.deployment}}">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Bio</label>
-            <input type="text" class="form-control" id="bio" placeholder="Tell us about your service" value="{{user.bio}}">
-        </div>
+    <div class="form-group">
+        <label for="input-name">Username</label>
+        <input type="text" class="form-control" name="name" id="input-name" placeholder="Username" value="{{user.name}}">
+    </div>
+    <div class="form-group">
+        <label for="input-name">Avatar URL</label>
+        <input type="text" class="form-control" name="avatar" id="input-avatar" placeholder="https://..." value="{{user.avatar}}">
+    </div>
+    <div class="form-group">
+        <label for="input-name">Cover Image URL</label>
+        <input type="text" class="form-control" name="coverImg" id="input-coverImg" placeholder="https://..." value="{{user.coverImg}}">
+    </div>
+    <div class="form-group">
+        <label for="input-branch">Branch</label>
+        <select class="form-control" name="branch" id="input-branch" data-previous="{{user.branch}}">
+            <option value="unselected">Unselected</option>
+            <option value="army">Army</option>
+            <option value="navy">Navy</option>
+            <option value="airforce">Air Force</option>
+            <option value="marines">Marines</option>
+            <option value="coastguard">Coast Guard</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="input-rank">Rank</label>
+        <select class="form-control" name="rank" id="input-rank" data-previous="{{user.rank}}">
+            <option value="unselected">Unselected</option>
+            <option value="E-1">E-1</option>
+            <option value="E-2">E-2</option>
+            <option value="E-3">E-3</option>
+            <option value="E-4">E-4</option>
+            <option value="E-5">E-5</option>
+            <option value="E-6">E-6</option>
+            <option value="E-7">E-7</option>
+            <option value="E-8">E-8</option>
+            <option value="E-9">E-9</option>
+            <option value="WO1">WO1</option>
+            <option value="CW2">CW2</option>
+            <option value="CW3">CW3</option>
+            <option value="CW4">CW4</option>
+            <option value="CW5">CW5</option>
+            <option value="O-1">O-1</option>
+            <option value="O-2">O-2</option>
+            <option value="O-3">O-3</option>
+            <option value="O-4">O-4</option>
+            <option value="O-5">O-5</option>
+            <option value="O-6">O-6</option>
+            <option value="O-7">O-7</option>
+            <option value="O-8">O-8</option>
+            <option value="O-9">O-9</option>
+            <option value="O-10">O-10</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="input-deployments">Deployments</label>
+        <input type="text" class="form-control" name="deployments" id="input-deployments" placeholder="Deployments" value="{{user.deployment}}">
+    </div>
+    <div class="form-group">
+        <label for="input-mos">MOS</label>
+        <input type="text" class="form-control" name="mos" id="input-mos" placeholder="MOS" value="{{user.mos}}">
+    </div>
+    <div class="form-group">
+        <label for="input-bio">Bio</label>
+        <input type="text" class="form-control" name="bio" id="input-bio" placeholder="Tell us about your service" value="{{user.bio}}">
+    </div>
 
-        <button type="submit" class="btn btn-primary" id="submit-event">Submit</button>
-    </form>
+    <button type="submit" class="btn btn-primary" id="submit-event">Submit</button>
+</form>
+
+<script>
+    $(document).ready(function () {
+        var branchDropdown = $('#input-branch');
+        var branchSelection = $('#input-branch option[value="' + branchDropdown.data('previous') + '"]');
+        if (branchSelection) {
+            branchSelection.prop('selected', true);
+        }
+
+        var rankDropdown = $('#input-rank');
+        var rankSelection = $('#input-rank option[value="' + rankDropdown.data('previous') + '"]');
+        if (rankSelection) {
+            rankSelection.prop('selected', true);
+        }
+    });
+</script>
 
 <script>
     /*!
- * Bootstrap 4 multi dropdown navbar ( https://bootstrapthemes.co/demo/resource/bootstrap-4-multi-dropdown-navbar/ )
- * Copyright 2017.
- * Licensed under the GPL license
- */
+    * Bootstrap 4 multi dropdown navbar ( https://bootstrapthemes.co/demo/resource/bootstrap-4-multi-dropdown-navbar/ )
+     * Copyright 2017.
+     * Licensed under the GPL license
+     */
 
 
 $( document ).ready( function () {
@@ -76,23 +101,22 @@ $( document ).ready( function () {
         }
         var $subMenu = $( this ).next( ".dropdown-menu" );
         $subMenu.toggleClass( 'show' );
-        
+
         $( this ).parent( "li" ).toggleClass( 'show' );
 
         $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
             $( '.dropdown-menu .show' ).removeClass( "show" );
         } );
-        
-         if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+
+        if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
             $el.next().css( { "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 } );
         }
 
         return false;
     } );
 } );
-
-
 </script>
+
 <style>
 .navbar-light .navbar-nav .nav-link {
     color: rgba(64, 64, 64,1);
@@ -114,8 +138,4 @@ $( document ).ready( function () {
 .dropdown-menu .show > .dropdown-toggle::after{
     transform: rotate(-90deg);
 }
-
-
-Add CommentCollapse 
-
 </style>
