@@ -1,0 +1,454 @@
+
+
+/*   Event Styles */
+.event-topper{
+    color: white;
+    height: 100px;
+    width: 100%;
+    position:relative;
+}
+.event-topper-text{
+    position: absolute;
+    bottom: 1px;
+    left:1px;
+ 
+}
+
+.event-topper-text h5{
+    font-size: 1.5em;
+}
+
+.event-card{
+    border-bottom: 1px black solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+}
+
+.icon-btn{
+    border: none;
+    background: none;
+}
+
+#support-cat::after {
+    content: "Support Group";
+}
+
+#meetup-cat::after{
+    content: "Meetup";
+}
+
+#exercise-cat::after{
+    content:"Exercise/Sports";
+}
+
+.sidebarEvent {
+    width: 90%;
+    display: block;
+    margin: 2px 0;
+    padding:0;
+    border: 1px solid black;
+    position: relative;
+    clear: both;
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.dateBox{
+    position: relative;
+    width: 20%;
+    background-color: black;
+    color: white;
+    float: left;
+    text-align: center;
+}
+
+.eventSummary{
+    position: relative;
+    width: 79%;
+    float: left;
+    padding: 1%;
+}
+
+.rank-img{
+    height:20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: inline-block;
+}
+
+/* Army */
+
+
+.army-E-2 {
+    background-image: url(/images/ranks/army/xprivate-second-class.png.pagespeed.ic.yh-Nt8tCwk.webp);
+}
+
+.army-E-3 {
+    background-image: url(/images/ranks/army/xprivate-first-class.png.pagespeed.ic.6PwisgqIOD.webp);
+}
+
+.army-E-4 {
+    background-image: url(/images/ranks/army/xspecialist.png.pagespeed.ic.F4uH2JJvyh.webp);
+}
+
+.army-E-5 {
+    background-image: url(/images/ranks/army/xsergeant.png.pagespeed.ic.PheYAtqDAF.webp);
+}
+.army-E-6 {
+    background-image: url(/images/ranks/army/xstaff-sergeant.png.pagespeed.ic.kMfghP2Gro.webp);
+}
+.army-E-7 {
+    background-image: url(/images/ranks/army/xsergeant-first-class.png.pagespeed.ic.-s7j-CoL3l.webp);
+}
+.army-E-8 {
+    background-image: url(/images/ranks/army/xfirst-sergeant.png.pagespeed.ic.aRAcWX9Rdj.webp);
+}
+.army-E-9 {
+    background-image: url(/images/ranks/army/xsergeant-major.png.pagespeed.ic.O-g5L2lKvG.webp);
+}
+
+.army-O-1 {
+    background-image: url(/images/ranks/army/xsecond-lieutenant.png.pagespeed.ic.ykv8Ucc7bt.webp);
+}
+
+.army-O-2 {
+    background-image: url(/images/ranks/army/xfirst-lieutenant.png.pagespeed.ic.w_SzOgG_Cq.webp);
+}
+.army-O-3 {
+    background-image: url(/images/ranks/army/xcaptain.png.pagespeed.ic.zfHvQkMTvb.webp);
+}
+.army-O-4 {
+    background-image: url(/images/ranks/army/xmajor.png.pagespeed.ic.XLEXXTW_ZC.webp);
+}
+.army-O-5 {
+    background-image: url(/images/ranks/army/xlieutenant-colonel.png.pagespeed.ic.8uEH7oWXYW.webp);
+}
+.army-O-6 {
+    background-image: url(/images/ranks/army/xcolonel.png.pagespeed.ic.DgbWoeMk_D.webp);
+}
+.army-O-7 {
+    background-image: url(/images/ranks/army/xbrigadier-general.png.pagespeed.ic.cJRkCtBxEC.webp);
+}
+.army-O-8 {
+    background-image: url(/images/ranks/army/xmajor-general.png.pagespeed.ic.03AOrlqG8G.webp);
+}
+.army-O-9 {
+    background-image: url(/images/ranks/army/xlieutenant-general.png.pagespeed.ic.7MbZoybDuv.webp);
+}
+
+.army-O-10 {
+    background-image: url(/images/ranks/army/xgeneral.png.pagespeed.ic.k2WFPbmBY4.webp);
+}
+
+.army-W01 {
+    background-image: url(/images/ranks/army/xwarrant-officer-1.png.pagespeed.ic.HOXXDMw8_t.webp);
+}
+.army-CW2 {
+    background-image: url(/images/ranks/army/xchief-warrant-officer-2.png.pagespeed.ic.qbfg-xRnf0.webp);
+}
+.army-CW3 {
+    background-image: url(/images/ranks/army/xchief-warrant-officer-3.png.pagespeed.ic.Njcp0AFjKS.webp);
+}
+.army-CW4 {
+    background-image: url(/images/ranks/army/xchief-warrant-officer-4.png.pagespeed.ic.Mj6ps__DJ1.webp);
+}
+.army-CW5 {
+    background-image: url(/images/ranks/army/xchief-warrant-officer-5.png.pagespeed.ic.7XicERHG12.webp);
+}
+
+/* Air Force */
+
+.airforce-E-2 {
+    background-image: url(/images/ranks/af/xairman.png.pagespeed.ic.AmW0-42CDr.webp);
+}
+.airforce-E-3 {
+    background-image: url(/images/ranks/af/xairman-first-class.png.pagespeed.ic.z4vjCayzcw.webp);
+}
+.airforce-E-4 {
+    background-image: url(/images/ranks/af/xsenior-airman.png.pagespeed.ic.5EwYIQvvq7.webp);
+}
+.airforce-E-5 {
+    background-image: url(/images/ranks/af/xstaff-sergeant.png.pagespeed.ic.xQpbIWf4hX.webp);
+}
+.airforce-E-6 {
+    background-image: url(/images/ranks/af/xtechnical-sergeant.png.pagespeed.ic.OtIitAAiNq.webp);
+}
+.airforce-E-7 {
+    background-image: url(/images/ranks/af/xmaster-sergeant.png.pagespeed.ic.H2OiG5a6o1.webp);
+}
+.airforce-E-8 {
+    background-image: url(/images/ranks/af/xsenior-master-sergeant.png.pagespeed.ic.Lvw4Y62FQq.webp);
+}
+.airforce-E-9 {
+    background-image: url(/images/ranks/af/xchief-master-sergeant.png.pagespeed.ic.lzm-1rhOmo.webp);
+}
+
+
+.airforce-O-1 {
+    background-image: url(/images/ranks/af/xsecond-lieutenant.png.pagespeed.ic.ykv8Ucc7bt.webp);
+}
+
+.airforce-O-2 {
+    background-image: url(/images/ranks/af/xfirst-lieutenant.png.pagespeed.ic.w_SzOgG_Cq.webp);
+}
+.airforce-O-3 {
+    background-image: url(/images/ranks/af/xcaptain.png.pagespeed.ic.zfHvQkMTvb.webp);
+}
+.airforce-O-4 {
+    background-image: url(/images/ranks/af/xmajor.png.pagespeed.ic.XLEXXTW_ZC.webp);
+}
+.airforce-O-5 {
+    background-image: url(/images/ranks/af/xlieutenant-colonel.png.pagespeed.ic.8uEH7oWXYW.webp);
+}
+.airforce-O-6 {
+    background-image: url(/images/ranks/af/xcolonel.png.pagespeed.ic.DgbWoeMk_D.webp);
+}
+.airforce-O-7 {
+    background-image: url(/images/ranks/af/xbrigadier-general.png.pagespeed.ic.cJRkCtBxEC.webp);
+}
+.airforce-O-8 {
+    background-image: url(/images/ranks/af/xmajor-general.png.pagespeed.ic.03AOrlqG8G.webp);
+}
+.airforce-O-9 {
+    background-image: url(/images/ranks/af/xlieutenant-general.png.pagespeed.ic.7MbZoybDuv.webp);
+}
+.airforce-O-10 {
+    background-image: url(/images/ranks/af/xgeneral.png.pagespeed.ic.k2WFPbmBY4.webp);
+}
+
+
+/* Navy */
+
+.navy-E-2 {
+    background-image: url(/images/ranks/navy/xseaman-apprentice.png.pagespeed.ic.6IWSvDfzHz.webp);
+}
+.navy-E-3 {
+    background-image: url(/images/ranks/navy/xseaman.png.pagespeed.ic.gQ5gfnaAI7.webp);
+}
+.navy-E-4 {
+    background-image: url(/images/ranks/navy/xpetty-officer-third-class.png.pagespeed.ic.-AAkAdjkeC.webp);
+}
+.navy-E-5 {
+    background-image: url(/images/ranks/navy/xpetty-officer-second-class.png.pagespeed.ic.YDpaziIdMJ.webp);
+}
+.navy-E-6 {
+    background-image: url(/images/ranks/navy/xpetty-officer-first-class.png.pagespeed.ic.QWisX2zY4Q.webp);
+}
+.navy-E-7 {
+    background-image: url(/images/ranks/navy/xmaster-chief-petty-officer.png.pagespeed.ic.bZD37Pjhlr.webp);
+}
+.navy-E-8 {
+    background-image: url(/images/ranks/navy/xsenior-chief-petty-officer.png.pagespeed.ic.OGsXPc_0cb.webp);
+}
+.navy-E-9 {
+    background-image: url(/images/ranks/navy/xmaster-chief-petty-officer.png.pagespeed.ic.bZD37Pjhlr.webp);
+}
+
+
+.navy-O-1 {
+    background-image: url(/images/ranks/cg/xsecond-lieutenant.png.pagespeed.ic.ykv8Ucc7bt.webp);
+}
+.navy-O-2 {
+    background-image: url(/images/ranks/cg/xfirst-lieutenant.png.pagespeed.ic.w_SzOgG_Cq.webp);
+}
+.navy-O-3 {
+    background-image: url(/images/ranks/cg/xcaptain.png.pagespeed.ic.zfHvQkMTvb.webp);
+}
+.navy-O-4 {
+    background-image: url(/images/ranks/cg/xmajor.png.pagespeed.ic.XLEXXTW_ZC.webp);
+}
+.navy-O-5 {
+    background-image: url(/images/ranks/cg/xlieutenant-colonel.png.pagespeed.ic.8uEH7oWXYW.webp);
+}
+.navy-O-6 {
+    background-image: url(/images/ranks/cg/xcolonel.png.pagespeed.ic.DgbWoeMk_D.webp);
+}
+.navy-O-7 {
+    background-image: url(/images/ranks/cg/xbrigadier-general.png.pagespeed.ic.cJRkCtBxEC.webp);
+}
+.navy-O-8 {
+    background-image: url(/images/ranks/cg/xmajor-general.png.pagespeed.ic.03AOrlqG8G.webp);
+}
+.navy-O-9 {
+    background-image: url(/images/ranks/cg/xlieutenant-general.png.pagespeed.ic.7MbZoybDuv.webp);
+}
+.navy-O-10 {
+    background-image: url(/images/ranks/cg/xgeneral.png.pagespeed.ic.k2WFPbmBY4.webp);
+}
+.navy-CW2 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-2.png.pagespeed.ic.mXNwpCSJxt.webp);
+}
+.navy-CW3 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-3.png.pagespeed.ic.MxAYi84fO7.webp);
+}
+.navy-CW4 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-4.png.pagespeed.ic.SDT4j1F6Q4.webp);
+}
+
+
+
+/* Marines */
+
+
+.marines-E-2 {
+    background-image: url(/images/ranks/marines/xprivate-first-class.png.pagespeed.ic.lu5y3l5B9O.webp);
+}
+.marines-E-3 {
+    background-image: url(/images/ranks/marines/xlance-corporal.png.pagespeed.ic.ktbITZ8eZ6.webp);
+}
+.marines-E-4 {
+    background-image: url(/images/ranks/marines/xcorporal.png.pagespeed.ic.ApOPMic7o5.webp);
+}
+.marines-E-5 {
+    background-image: url(/images/ranks/marines/xsergeant.png.pagespeed.ic.8BfVYGdmAy.webp);
+}
+.marines-E-6 {
+    background-image: url(/images/ranks/marines/xstaff-sergeant.png.pagespeed.ic.jpxvXLDc5-.webp);
+}
+.marines-E-7 {
+    background-image: url(/images/ranks/marines/xgunnery-sergeant.png.pagespeed.ic.zE8k_rhjUm.webp);
+}
+.marines-E-8 {
+    background-image: url(/images/ranks/marines/xmaster-sergeant.png.pagespeed.ic.RM4DHmEFZP.webp);
+}
+.marines-E-9 {
+    background-image: url(/images/ranks/marines/xmaster-gunnery-sergeant.png.pagespeed.ic.ZSSCYbteI2.webp);
+}
+
+
+
+.marines-O-1 {
+    background-image: url(/images/ranks/marines/xsecond-lieutenant.png.pagespeed.ic.ykv8Ucc7bt.webp);
+}
+
+.marines-O-2 {
+    background-image: url(/images/ranks/marines/xfirst-lieutenant.png.pagespeed.ic.w_SzOgG_Cq.webp);
+}
+.marines-O-3 {
+    background-image: url(/images/ranks/marines/xcaptain.png.pagespeed.ic.zfHvQkMTvb.webp);
+}
+.marines-O-4 {
+    background-image: url(/images/ranks/marines/xmajor.png.pagespeed.ic.XLEXXTW_ZC.webp);
+}
+.marines-O-5 {
+    background-image: url(/images/ranks/marines/xlieutenant-colonel.png.pagespeed.ic.8uEH7oWXYW.webp);
+}
+.marines-O-6 {
+    background-image: url(/images/ranks/marines/xcolonel.png.pagespeed.ic.DgbWoeMk_D.webp);
+}
+.marines-O-7 {
+    background-image: url(/images/ranks/marines/xbrigadier-general.png.pagespeed.ic.cJRkCtBxEC.webp);
+}
+.marines-O-8 {
+    background-image: url(/images/ranks/marines/xmajor-general.png.pagespeed.ic.03AOrlqG8G.webp);
+}
+.marines-O-9 {
+    background-image: url(/images/ranks/marines/xlieutenant-general.png.pagespeed.ic.7MbZoybDuv.webp);
+}
+.marines-O-10 {
+    background-image: url(/images/ranks/marines/xgeneral.png.pagespeed.ic.k2WFPbmBY4.webp);
+}
+
+.marines-W01{
+    background-image: url(/images/ranks/marines/xwarrant-officer-1.png.pagespeed.ic.pqZlUAz2GR.webp);
+}
+
+.marines-CW2{
+    background-image: url(/images/ranks/marines/xchief-warrant-officer-2.png.pagespeed.ic.kwyf4tEO3b.webp);
+}
+
+.marines-CW3{
+    background-image: url(/images/ranks/marines/xchief-warrant-officer-3.png.pagespeed.ic.g5zN316ZSG.webp);
+}
+
+.marines-CW4{
+    background-image: url(/images/ranks/marines/xchief-warrant-officer-4.png.pagespeed.ic.sgQvwycwhN.webp);
+}
+
+.marines-CW5{
+    background-image: url(/images/ranks/marines/xchief-warrant-officer-5.png.pagespeed.ic.v4yiyPm3X4.webp);
+}
+
+
+/* Coast Guard */
+
+
+.coastguard-E-2 {
+    background-image: url(/images/ranks/cg/xseaman-apprentice.png.pagespeed.ic.m_30DxB23q.webp);
+}
+.coastguard-E-3 {
+    background-image: url(/images/ranks/cg/xseaman.png.pagespeed.ic.lEw_6bB2Dh.webp);
+}
+.coastguard-E-4 {
+    background-image: url(/images/ranks/cg/xpetty-officer-third-class.png.pagespeed.ic.hEZOeQGSyz.webp);
+}
+.coastguard-E-5 {
+    background-image: url(/images/ranks/cg/xpetty-officer-second-class.png.pagespeed.ic.6huoTIRpIl.webp);
+}
+.coastguard-E-6 {
+    background-image: url(/images/ranks/cg/xpetty-officer-first-class.png.pagespeed.ic.z12dc_2rlZ.webp);
+}
+.coastguard-E-7 {
+    background-image: url(/images/ranks/cg/xchief-petty-officer.png.pagespeed.ic.aJtDxN_g-_.webp);
+}
+.coastguard-E-8 {
+    background-image: url(/images/ranks/cg/xsenior-chief-petty-officer.png.pagespeed.ic.tM8HaXmK-E.webp);
+}
+.coastguard-E-9 {
+    background-image: url(/images/ranks/cg/xmaster-chief-petty-officer.png.pagespeed.ic.PN4Ipzqopo.webp);
+}
+
+
+
+.coastguard-O-1 {
+    background-image: url(/images/ranks/cg/xsecond-lieutenant.png.pagespeed.ic.ykv8Ucc7bt.webp);
+}
+.coastguard-O-2 {
+    background-image: url(/images/ranks/cg/xfirst-lieutenant.png.pagespeed.ic.w_SzOgG_Cq.webp);
+}
+.coastguard-O-3 {
+    background-image: url(/images/ranks/cg/xcaptain.png.pagespeed.ic.zfHvQkMTvb.webp);
+}
+.coastguard-O-4 {
+    background-image: url(/images/ranks/cg/xmajor.png.pagespeed.ic.XLEXXTW_ZC.webp);
+}
+.coastguard-O-5 {
+    background-image: url(/images/ranks/cg/xlieutenant-colonel.png.pagespeed.ic.8uEH7oWXYW.webp);
+}
+.coastguard-O-6 {
+    background-image: url(/images/ranks/cg/xcolonel.png.pagespeed.ic.DgbWoeMk_D.webp);
+}
+.coastguard-O-7 {
+    background-image: url(/images/ranks/cg/xbrigadier-general.png.pagespeed.ic.cJRkCtBxEC.webp);
+}
+.coastguard-O-8 {
+    background-image: url(/images/ranks/cg/xmajor-general.png.pagespeed.ic.03AOrlqG8G.webp);
+}
+.coastguard-O-9 {
+    background-image: url(/images/ranks/cg/xlieutenant-general.png.pagespeed.ic.7MbZoybDuv.webp);
+}
+.coastguard-O-10 {
+    background-image: url(/images/ranks/cg/xgeneral.png.pagespeed.ic.k2WFPbmBY4.webp);
+}
+
+.coastguard-CW2 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-2.png.pagespeed.ic.mXNwpCSJxt.webp);
+}
+.coastguard-CW3 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-3.png.pagespeed.ic.MxAYi84fO7.webp);
+}
+.coastguard-CW4 {
+    background-image: url(/images/ranks/navy/xchief-warrant-officer-4.png.pagespeed.ic.SDT4j1F6Q4.webp);
+}
+
+.unselected-E-1, .unselected-E-2, .unselected-E-3, .unselected-E-4, .unselected-E-5, .unselected-E-6, .unselected-E-7, .unselected-E-8, 
+.unselected-E-9, .unselected-O-1, .unselected-O-2, .unselected-O-3, .unselected-O-4, .unselected-O-5, .unselected-O-6, .unselected-O-7, 
+.unselected-O-8, .unselected-O-9, .unselected-O-10, .army-unselected, .coastguard-unselected, .marines-unselected, .airforce-unselected,
+.navy-unselected, .coastguard-E-1, .marines-E-1, .navy-E-1, .airforce-E-1, .army-E-1{
+    background-image: url(/images/alex-martinez-43505-unsplash);
+
+}
