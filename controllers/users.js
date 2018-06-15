@@ -51,6 +51,7 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 
 router.get("/editprofile", isAuthenticated, function (req, res) {
     var hbsObject = {};
+    console.log(hbsObject);
 
     res.renderWithContext("editprofile", hbsObject);
 });
