@@ -65,6 +65,7 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
 router.get("/editprofile", isAuthenticated, function (req, res) {
    
     var hbsObject = {};
+    console.log(hbsObject);
 
     res.renderWithContext("editprofile", hbsObject);
 });
@@ -79,11 +80,13 @@ router.post("/editprofile", isAuthenticated, function (req, res) {
         bio: req.body.bio,
         deployment: req.body.deployment
     };
+    console.log(changes);
  
     db.User.update(changes, {
         where: { userId: req.user.userId },
     }).then(function () {
         res.redirect("/viewuser/" + req.user.userId);
+        console.log(req.user.userId);
     });
 });
 

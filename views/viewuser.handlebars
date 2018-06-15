@@ -1,73 +1,97 @@
+<link rel="stylesheet" href="../css/profilepage.css">
 <div id="profileview">
     <div class="cover" style="background-image: url(https://r.hswstatic.com/w_907/gif/tesla-cat.jpg);">
-THIS IS THE COVER IMAGE
+        <div class="p-branch">{{profile.branch}}</div>
+        <div class="cover-bkgd"></div>
     </div>
+    {{!--
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/forum">Forum</a>
             </li>
         </ol>
-    </nav>
-
-    THIS IS A USER NAMED: {{profile.name}} THIS IS THE USER AVATAR:
-    <img src="{{profile.avatar}}" alt="{{profile.name}}"
-    />
-    <div>{{profile.rank}}</div>
-    <div>{{profile.branch}}</div>
-    <div>{{profile.deployment}}</div>
-    <div>{{profile.mos}}</div>
-    <div>{{profile.bio}}</div>
-
-
-    <div class="following">
-        <button id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
-            {{#if profile.Followers}}
-            <i class="foo fas fa-user"></i>
+    </nav> --}}
+    <div class="d-flex flex-row p-usermain">
+        <div class="p-avatar">
+            <img src="{{profile.avatar}}" alt="{{profile.name}}" />
+        </div>
+        <div class="p-namegroup d-flex flex-column">
+            <div class="p-namerank d-flex flex-row">
+                <h2 class="p-name">{{profile.name}}</h2>
+                <div class="p-rank">{{profile.rank}}</div>
+            </div>
+            <div class="p-timestamp d-flex">Joined: {{profile.createdAt}}</div>
+        </div>
+        <div class="p-buttons ml-auto">
+            {{#if user}}
+            <a href="/editprofile">
+                <i class="foo fas fa-user"></i> Edit</a>
             {{else}}
-            <i class="foo far fa-user"></i>
+            <div class="following">
+                <button id="followed-button-{{profile.userId}}" class="followed" data-userid="{{profile.userId}}">
+                    {{#if profile.Followers}}
+                    <i class="foo fas fa-user"></i> Unfollow {{else}}
+                    <i class="foo far fa-user"></i> Follow {{/if}}
+                </button>
+            </div>
             {{/if}}
-        </button>
+        </div>
     </div>
-
-    {{#if profile.Followers}} {{> follower/followlist}} {{/if}}
-
-
-
-
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Post History</a>
-        </li>
-        {{#if myProfile}}
-        <li class="nav-item">
-            <a class="nav-link" id="subscribed-tab" data-toggle="tab" href="#subscribed" role="tab" aria-controls="subscribed" aria-selected="false">Subscribed</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="follow-tab" data-toggle="tab" href="#follow" role="tab" aria-controls="follow" aria-selected="false">Following</a>
-        </li>
-        {{/if}}
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
-            {{#each posts}} {{> post/post}} {{/each}}
+    <div class="d-flex bio">
+        <div class="col-lg-9 col-sm-12 row-nopad-left">
+            <div class="category-name">Bio</div>
+            <div>{{profile.bio}}</div>
         </div>
-
-        {{#if myProfile}}
-        <div class="tab-pane fade" id="subscribed" role="tabpanel" aria-labelledby="subscribed-tab">
-
-            {{#each subscriptions}} {{> thread/thread}} {{/each}}
-
+        <div class="col-lg-3 col-sm-12 row-nopad-right">
+            <h2><i class="fas fa-map-signs"></i> Last Deployment</h2>
+            <div>{{profile.deployment}}</div>
+            <h2><i class="fas fa-briefcase"></i> Last MOS</h2>
+            <div>{{profile.mos}}</div>
         </div>
-
-        <div class="tab-pane fade" id="follow" role="tabpanel" aria-labelledby="follow-tab">
-            <ul>
-                {{#each followeds}}
-                <li> {{this.name}} </li> {{/each}}
-            </ul>
-        </div>
-        {{/if}}
-    </div>
 </div>
 
-<script src="../js/profilepage.js" type="text/javascript"></script>
+
+<div></div>
+
+        {{#if profile.Followers}} {{> follower/followlist}} {{/if}}
+
+
+
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="true">Post History</a>
+            </li>
+            {{#if myProfile}}
+            <li class="nav-item">
+                <a class="nav-link" id="subscribed-tab" data-toggle="tab" href="#subscribed" role="tab" aria-controls="subscribed" aria-selected="false">Subscribed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="follow-tab" data-toggle="tab" href="#follow" role="tab" aria-controls="follow" aria-selected="false">Following</a>
+            </li>
+            {{/if}}
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
+                {{#each posts}} {{> post/post}} {{/each}}
+            </div>
+
+            {{#if myProfile}}
+            <div class="tab-pane fade" id="subscribed" role="tabpanel" aria-labelledby="subscribed-tab">
+
+                {{#each subscriptions}} {{> thread/thread}} {{/each}}
+
+            </div>
+
+            <div class="tab-pane fade" id="follow" role="tabpanel" aria-labelledby="follow-tab">
+                <ul>
+                    {{#each followeds}}
+                    <li> {{this.name}} </li> {{/each}}
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+
+    <script src="../js/profilepage.js" type="text/javascript"></script>

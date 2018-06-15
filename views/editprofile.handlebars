@@ -1,6 +1,6 @@
 <form method="POST">
         <div class="form-group">
-            <label for="exampleFormControlInput1">Username</label>
+            <label for="user_name">Username</label>
             <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Username" value="{{user.name}}">
         </div>
         <div class="form-group">
@@ -12,6 +12,8 @@
                 <option value="airforce">Air Force</option>
                 <option value="marines">Marines</option>
                 <option value="coastguard">Coast Guard</option>
+                </select>
+                </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Rank</label>
             <select class="form-control" name="rank" id="rank" value="{{user.rank}}">
@@ -40,6 +42,7 @@
                 <option value="O-8">O-8</option>
                 <option value="O-9">O-9</option>
                 <option value="O-10">O-10</option>
+                </select></div>
         <div class="form-group">
             <label for="exampleFormControlInput1">MOS</label>
             <input type="text" class="form-control" name="mos" id="mos" placeholder="MOS" value="{{user.mos}}">
