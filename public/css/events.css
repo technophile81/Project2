@@ -6,16 +6,18 @@
     height: 100px;
     width: 100%;
     position:relative;
+    border-radius: 10px;
 }
 .event-topper-text{
     position: absolute;
     bottom: 1px;
-    left:1px;
- 
+    left:2%;
+    margin: 0;
 }
 
 .event-topper-text h5{
     font-size: 1.5em;
+    margin-bottom: 0;
 }
 
 .event-card{
@@ -24,6 +26,10 @@
     border-left: none;
     border-right: none;
     border-radius: 0px;
+}
+
+.oneEvent .event-card{
+    border-bottom: none;
 }
 
 .icon-btn{
@@ -85,6 +91,21 @@
     background-position: bottom;
     display: inline-block;
 }
+
+
+.categorySort .btn-secondary{
+    background-color:#c39b77;
+    border-color: #c39b77;
+    line-height: 1;
+
+}
+
+.eventComments {
+    width: 80%;
+    position: relative;
+    margin: 1% auto;
+}
+
 
 /* Army */
 

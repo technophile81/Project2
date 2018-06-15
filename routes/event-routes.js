@@ -10,8 +10,16 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function (app) {
 
 
-  app.get("/event/edit", function (req, res) {
-    res.render("event-edit", {});
+  app.get("/event/edit/:id", function (req, res) {
+    db.CalEvent.findOne({
+        where: {
+            id: req.params.id
+        },
+        include: [{model: db.User, as: "User_Id"}, {model: db.User, as: "EventCreator"},{model: db.EventComments, as:"EventComment_ID", include:[{model: db.User, as: "User_Id"}]}]
+     }).then(function(dbCalEvent){
+        res.render("eventedit", dbCalEvent);
+     });
+    
   });
  
 
@@ -222,10 +230,9 @@ module.exports = function (app) {
             };
             let jsonString = JSON.stringify(result);
             console.log(jsonString)
-            res.render("events-categories.handlebars", result);
+            res.render("all-events", result);
         }else{
-            let noResult = {noevents: "No events in this category yet."}
-            res.render("events-categories.handlebars", noResult);
+            res.redirect("/events"); 
 
         }
         }).catch(function(error){
@@ -268,7 +275,7 @@ module.exports = function (app) {
       });
 
       //retrieves events with a matching zipcode
-      app.get("/api/events/:zip", isAuthenticated, function(req, res){
+      app.get("/api/events/zip/:zip", isAuthenticated, function(req, res){
 
         db.CalEvent.findOne({
             where: {
