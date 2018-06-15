@@ -49,7 +49,7 @@ router.get("/viewuser/:user_id", isAuthenticated, function (req, res) {
                         { model: db.User },
                         {
                             model: db.Post,
-                            attributes: [ ],
+                            attributes: [],
                         },
                     ],
                 }).then(function (subbeddata) {
