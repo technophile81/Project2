@@ -111,7 +111,7 @@ $(document).ready(function () {
         let eventId = $(this).attr("data-event-id");
         console.log(eventId);
 
-        window.location.href = "/event/edit?event_id=" + eventId;
+        window.location.href = "/z/event/edit/" + eventId;
 
 
         //end edit data function
@@ -268,7 +268,7 @@ $(document).ready(function () {
                     for(let i = 0; i<nearZipCodes.length; i++){
                     $.ajax({
                         method:"GET",
-                        url: "/api/events/" + nearZipCodes[i].zip_code
+                        url: "/api/events/zip/" + nearZipCodes[i].zip_code
                     }).then(function(events){
                         nearEvents.push(events);
                     });

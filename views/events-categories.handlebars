@@ -1,31 +1,33 @@
 {{log "you made it to the all events page!"}}
 {{log "all events json" user
 events
-comments
 }}
 <div class="d-flex flex-column w-100">
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Forum</a></li>
-    <li class="breadcrumb-item"><a href="#">All Events</a></li>
-    <li class="breadcrumb-item active" aria-current="page">{{category}}</li>
+    <li class="breadcrumb-item"><a href="/forum">Forum</a></li>
+    <li class="breadcrumb-item active" aria-current="page"> All Events</li>
   </ol>
 </nav>
 
 <div id="multiple-events-top">
-    <button type="button" id="add-new-event"> + Add A New Event</button>
-    <div class="form-group">
+    <button type="button" id="add-new-event" style="border-radius:7px" data-show-value="false"> + Add New Event</button><span> </span>
+    <div class="form-group" style="display: inline-block">
    <div class="btn-group categorySort" role="group" aria-label="categories">
   <button type="button" class="btn btn-secondary" value="support">Support Groups</button>
   <button type="button" class="btn btn-secondary"value="meetup">Meetups</button>
   <button type="button" class="btn btn-secondary"value="exercise">Exercise/Sports</button>
 </div>
   </div>
+  <form class="form-inline my-2 my-lg-0" style="display: inline-block">
+      <input class="form-control mr-sm-2 zip-search-content" type="number" placeholder="Enter Zip Code" aria-label="Search" required>
+      <button class="zip-search-btn btn btn-outline-success my-2 my-sm-0 " type="submit"><i class="fas fa-search"></i></button>
+    </form>
 </div>
 
 <div id="new-event-form">
-    <form action="/api/events" method="post">
+    <form action="/events" method="post">
         <!--Event NAme-->
         <div class="form-group">
             <label for="exampleFormControlInput1">Event Name</label>
@@ -157,11 +159,10 @@ comments
 
     </form>
 </div>
-{{#if noevents}}
-    <h2>{{noevents}}</h2>
-{{else}}
+
 <div id="all-events">
-     {{#each events}}
+    {{#each events}}
+
     <div class="card mb-3 event-card">
 
         <div class="card-body">
@@ -179,7 +180,7 @@ comments
             </div>
             <div class="card-text">
                 {{#each EventCreator}}
-                <small class="text-muted category">Posted by: <a href="/viewuser/{{userId}}">{{name}}</a> <span class="post-rank mr-2">RANK</span></small>
+                <small class="text-muted category">Posted by: <a href="/viewuser/{{userId}}">{{name}}</a> <span class="post-rank mr-2"><div class="rank-img {{branch}}-{{rank}}"></div></span></small>
                 {{/each}}
            <small class="text-muted category">| Category: <span id="{{category}}-cat"></span></small>
            <h4>Description:</h4>
@@ -220,10 +221,10 @@ comments
     </div>
     
     {{/each}}
-{{/if}}
 
 
 </div>
 </div>
+
       <script type="text/javascript" src="/js/event.js" ></script>
 
